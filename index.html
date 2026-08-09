@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
     <!-- ============================================ -->
-    <!-- POPADS - POPUNDER AD -->
+    <!-- GOOGLE ADSENSE -->
     <!-- ============================================ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255632222150139" crossorigin="anonymous"></script>
+    
+    <!-- POPADS -->
     <script type="text/javascript" data-cfasync="false">
-    /*<![CDATA[/* */
     (function(){var q=window,i="ab1ac711051636ea677165e87cf60e67",o=[["siteId",288+411-92+5315090],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],c=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL2lwdXNoLm1pbi5jc3M=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvZVdwL2xvei5taW4uanM="],l=-1,y,b,t=function(){clearTimeout(b);l++;if(c[l]&&!(1811801901000<(new Date).getTime()&&1<l)){y=q.document.createElement("script");y.type="text/javascript";y.async=!0;var e=q.document.getElementsByTagName("script")[0];y.src="https://"+atob(c[l]);y.crossOrigin="anonymous";y.onerror=t;y.onload=function(){clearTimeout(b);q[i.slice(0,16)+i.slice(0,16)]||t()};b=setTimeout(t,5E3);e.parentNode.insertBefore(y,e)}};if(!q[i]){try{Object.freeze(q[i]=o)}catch(e){}t()}})();
-    /*]]>/* */
     </script>
     
     <script>
@@ -67,7 +68,7 @@
         .fs-save { background:#c9a84c; color:#000; }
         .fs-wa { background:#25D366; color:#fff; }
         
-        .ad-box { text-align:center; margin:15px auto; max-width:350px; padding:8px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; }
+        .ad-box { text-align:center; margin:15px auto; max-width:350px; padding:8px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; overflow:hidden; }
         .ad-label { color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; }
         
         .search-box { display:flex; max-width:100%; }
@@ -82,12 +83,13 @@
 </head>
 <body>
 
-    <!-- TOP AD -->
-    <div style="background:#000; text-align:center; padding:6px; border-bottom:1px solid #1a1a1a;">
-        <p style="color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">Advertisement</p>
-        <div style="max-width:350px; margin:0 auto; min-height:60px;">
-            <script src="https://pl30685025.effectivecpmnetwork.com/98/b1/9c/98b19cbd65e58054c3a195bde9c05bf4.js"></script>
-        </div>
+    <!-- ============================================ -->
+    <!-- TOP AD - GOOGLE ADSENSE -->
+    <!-- ============================================ -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- HEADER -->
@@ -109,10 +111,8 @@
         </div>
     </header>
 
-    <!-- LOGIN -->
+    <!-- LOGIN/ADMIN same as before -->
     <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
-    
-    <!-- ADMIN -->
     <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
@@ -138,8 +138,12 @@
         </div>
     </section>
 
-    <!-- AD 1: After Hero -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
+    <!-- AD AFTER HERO -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- CATEGORIES -->
     <section id="home-cats" style="max-width:1100px;margin:0 auto;padding:25px 12px;">
@@ -147,36 +151,65 @@
         <div id="cats-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;"></div>
     </section>
 
-    <!-- AD 2: After Categories -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685028.effectivecpmnetwork.com/9308a924d252942d682ca93c1aaa8de6/invoke.js"></script></div>
+    <!-- AD AFTER CATEGORIES -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- SEARCH -->
     <div id="search-section" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🔍 Results</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="search-products"></div><button class="load-more-btn" id="search-load-more" onclick="loadMoreSearch()" style="display:none;">Load More</button></div>
 
     <!-- BEDS -->
     <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div><button class="load-more-btn" onclick="loadMore('bedroom')">Load More</button></div>
-    <!-- AD 3: After Beds -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685025.effectivecpmnetwork.com/98/b1/9c/98b19cbd65e58054c3a195bde9c05bf4.js"></script></div>
+    
+    <!-- AD AFTER BEDS -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- SOFAS -->
     <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div><button class="load-more-btn" onclick="loadMore('livingroom')">Load More</button></div>
-    <!-- AD 4: After Sofas -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
+    
+    <!-- AD AFTER SOFAS -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- DINING -->
     <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div><button class="load-more-btn" onclick="loadMore('dining')">Load More</button></div>
-    <!-- AD 5: After Dining -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685028.effectivecpmnetwork.com/9308a924d252942d682ca93c1aaa8de6/invoke.js"></script></div>
+    
+    <!-- AD AFTER DINING -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- TABLES -->
     <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div><button class="load-more-btn" onclick="loadMore('tables')">Load More</button></div>
-    <!-- AD 6: After Tables -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685025.effectivecpmnetwork.com/98/b1/9c/98b19cbd65e58054c3a195bde9c05bf4.js"></script></div>
+    
+    <!-- AD AFTER TABLES -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- TV STANDS -->
     <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div><button class="load-more-btn" onclick="loadMore('tvstands')">Load More</button></div>
-    <!-- AD 7: After TV Stands -->
-    <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
+    
+    <!-- AD AFTER TV STANDS -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- CONTACT -->
     <section style="max-width:1100px;margin:15px auto;padding:12px;">
@@ -190,6 +223,9 @@
     <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        
         var fsUrls=[],fsIdx=0;
         function openFullscreen(u,i){fsUrls=u;fsIdx=i;document.getElementById('fs-image').src=u[i];document.getElementById('fs-counter').textContent=(i+1)+'/'+u.length;document.getElementById('fullscreen-viewer').classList.add('show');document.body.style.overflow='hidden';}
         function closeFullscreen(){document.getElementById('fullscreen-viewer').classList.remove('show');document.body.style.overflow='';}
@@ -206,9 +242,7 @@
         async function lS(){try{const r=await fetch(CONFIG.SHEETDB_API);ap=await r.json();ap=ap.map(p=>({...p,category:(p.category||p['category ']||'').trim()}));}catch(e){ap=[];}}
         async function fC(){if(!confirm('Move ALL bedroom images to Living Room?'))return;await lS();const it=ap.filter(p=>p.category==='bedroom');if(!it.length){alert('No images!');return;}let c=0;for(const i of it){try{await fetch(CONFIG.SHEETDB_API+'/id/'+i.id,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:'livingroom'})});c++;}catch(e){}}await lS();alert('✅ Moved '+c+' images!');showCollection('livingroom');}
         async function fU(q,p,n){p=p||1;n=n||20;try{const r=await fetch('https://api.unsplash.com/search/photos?query='+encodeURIComponent(q)+'&per_page='+n+'&page='+p+'&client_id='+CONFIG.UNSPLASH_ACCESS_KEY);const d=await r.json();return d.results.map(function(i){return{id:i.id,url:i.urls.regular,name:i.alt_description||q};});}catch(e){return[];}}
-        
         function cd(p,i,u){return'<div class="product-card" onclick="openFullscreen('+JSON.stringify(u)+','+i+')"><img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p></div></div>';}
-        
         async function lM(c){pn[c]++;const b=document.querySelector('#'+c+'-collection .load-more-btn');if(b)b.textContent='Loading...';const im=await fU(CQ[c],pn[c],20);if(im.length){const cn=document.getElementById(c+'-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;if(b)b.textContent='Load More';}}
         async function lMS(){pn.search++;document.getElementById('search-load-more').textContent='Loading...';const im=await fU(cq,pn.search,20);if(im.length){const cn=document.getElementById('search-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;document.getElementById('search-load-more').textContent='Load More';}}
         async function sN(){const q=document.getElementById('search-input').value.trim();if(!q)return;cq=q+' design furniture';pn.search=1;hA();document.getElementById('search-section').classList.add('active');document.getElementById('search-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Searching...</p>';document.getElementById('search-load-more').style.display='none';const un=await fU(cq,1,30);await lS();const rs=ap.filter(function(p){return p.name&&p.name.toLowerCase().includes(q.toLowerCase());}).concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u);}document.getElementById('search-products').innerHTML=h;if(rs.length>=30)document.getElementById('search-load-more').style.display='block';window.scrollTo(0,0);}
