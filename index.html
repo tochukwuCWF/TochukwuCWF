@@ -42,8 +42,6 @@
         .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.6rem; }
         .product-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:8px; overflow:hidden; position:relative; }
         .product-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
-        .admin-delete-btn { position:absolute; top:4px; right:4px; background:rgba(200,0,0,0.8); color:#fff; border:none; border-radius:50%; width:22px; height:22px; font-size:12px; font-weight:bold; cursor:pointer; z-index:10; display:none; }
-        .product-card:hover .admin-delete-btn { display:block; }
         .category-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:10px; overflow:hidden; position:relative; }
         .category-card img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
         .blink-text { position:absolute; top:8px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 14px; border-radius:20px; font-weight:800; font-size:0.65rem; border:2px solid #c9a84c; animation:blink 1s infinite; white-space:nowrap; pointer-events:none; }
@@ -135,9 +133,37 @@
             .tool-hammer2 { left: 70%; }
             .tool-saw2 { left: 90%; }
         }
+
+        /* LOADING SPINNER */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .loading-overlay.active { display: flex; }
+        .spinner {
+            width: 50px; height: 50px;
+            border: 5px solid #333;
+            border-top: 5px solid #c9a84c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .loading-text { color: #c9a84c; margin-top: 15px; font-size: 1rem; font-weight: 600; text-align: center; }
     </style>
 </head>
 <body>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loadingText">Processing...</div>
+    </div>
 
     <!-- 👇 SCROLL DOWN ARROW - FIXED ON ALL PAGES -->
     <div class="scroll-down-arrow" id="scrollArrow">👇</div>
@@ -185,7 +211,7 @@
     <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
     
     <!-- ADMIN -->
-    <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload products</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload Products</button><hr style="border-color:#333;margin:12px 0;"><label style="color:#aaa;font-size:0.8rem;">Set category cover (upload from device)</label><select id="cover-select" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin:6px 0;"></select><div onclick="document.getElementById('cover-input').click()" style="border:2px dashed #c9a84c;padding:12px;text-align:center;border-radius:8px;cursor:pointer;margin:6px 0;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload cover image</p><input type="file" id="cover-input" accept="image/*" style="display:none;" onchange="uploadCover()"></div><div id="cover-preview" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="setCategoryCover()" class="btn-gold" style="margin-top:4px;">Set Cover</button></div></div>
+    <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload products</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload Products</button><hr style="border-color:#333;margin:12px 0;"><label style="color:#aaa;font-size:0.8rem;">Delete uploaded images</label><div id="admin-delete-list" style="max-height:200px;overflow-y:auto;border:1px solid #333;border-radius:6px;padding:8px;margin:6px 0;background:#000;"></div><button onclick="refreshDeleteList()" class="btn-green" style="margin-top:4px;">🔄 Refresh List</button><hr style="border-color:#333;margin:12px 0;"><label style="color:#aaa;font-size:0.8rem;">Set category cover (upload from device)</label><select id="cover-select" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin:6px 0;"></select><div onclick="document.getElementById('cover-input').click()" style="border:2px dashed #c9a84c;padding:12px;text-align:center;border-radius:8px;cursor:pointer;margin:6px 0;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload cover image</p><input type="file" id="cover-input" accept="image/*" style="display:none;" onchange="uploadCover()"></div><div id="cover-preview" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="setCategoryCover()" class="btn-gold" style="margin-top:4px;">Set Cover</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
     <div id="fullscreen-viewer">
@@ -296,6 +322,15 @@
     <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
+        // LOADING OVERLAY FUNCTIONS
+        function showLoading(text) {
+            document.getElementById('loadingText').textContent = text || 'Processing...';
+            document.getElementById('loadingOverlay').classList.add('active');
+        }
+        function hideLoading() {
+            document.getElementById('loadingOverlay').classList.remove('active');
+        }
+
         // SIMPLE IMAGE PREVIEWER - DIRECT URL
         function viewImage(url) {
             document.getElementById('fs-image').src = url;
@@ -376,19 +411,43 @@
         }
         
         function cd(p, i, u, isAdmin) {
-            var delBtn = isAdmin ? '<button class="admin-delete-btn" onclick="event.stopPropagation();deleteImage(\''+p.id+'\',\''+p.category+'\')">✕</button>' : '';
             var waMsg = "Hello Engineer Tochukwu, I want to order this";
             var waUrl = "https://wa.me/2349135357118?text=" + encodeURIComponent(waMsg) + "%0A%0A" + encodeURIComponent(p.url);
-            return '<div class="product-card" onclick="viewImage(\''+p.url+'\')">'+delBtn+'<img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p><a href="'+waUrl+'" target="_blank" style="display:inline-block;margin-top:4px;background:#25D366;color:#fff;padding:2px 10px;border-radius:12px;text-decoration:none;font-size:0.6rem;font-weight:600;">💬 Order</a></div></div>';
+            return '<div class="product-card" onclick="viewImage(\''+p.url+'\')"><img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p><a href="'+waUrl+'" target="_blank" style="display:inline-block;margin-top:4px;background:#25D366;color:#fff;padding:2px 10px;border-radius:12px;text-decoration:none;font-size:0.6rem;font-weight:600;">💬 Order</a></div></div>';
         }
         
-        async function deleteImage(id,cat) {
+        async function deleteImage(id) {
             if(!confirm('Delete this image?')) return;
+            showLoading('Deleting image...');
             try {
                 await fetch(CONFIG.SHEETDB_API+'/id/'+id, {method:'DELETE'});
                 await lS();
-                showCollection(cat);
+                refreshDeleteList();
+                alert('✅ Deleted successfully!');
             } catch(e) { alert('Delete failed'); }
+            hideLoading();
+        }
+        
+        async function refreshDeleteList() {
+            await lS();
+            var adminImages = ap.filter(p => p.category !== 'category_cover');
+            var container = document.getElementById('admin-delete-list');
+            if(adminImages.length === 0) {
+                container.innerHTML = '<p style="color:#555;font-size:0.8rem;">No uploaded images found.</p>';
+                return;
+            }
+            var html = '';
+            for(var i=0; i<adminImages.length; i++) {
+                var p = adminImages[i];
+                html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;border-bottom:1px solid #222;">';
+                html += '<div style="display:flex;align-items:center;gap:8px;overflow:hidden;">';
+                html += '<img src="'+p.url+'" style="width:40px;height:40px;object-fit:cover;border-radius:4px;">';
+                html += '<span style="font-size:0.7rem;color:#aaa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px;">'+(p.name||'Unnamed')+'</span>';
+                html += '</div>';
+                html += '<button onclick="deleteImage(\''+p.id+'\')" style="background:#cc0000;color:#fff;border:none;border-radius:4px;padding:2px 10px;font-size:0.65rem;cursor:pointer;">Delete</button>';
+                html += '</div>';
+            }
+            container.innerHTML = html;
         }
         
         async function lM(c) {
@@ -458,8 +517,7 @@
             const sh = ap.filter(function(p){ return p.category === c; });
             const rs = sh.concat(un);
             let h = '';
-            var isAdmin = document.getElementById('admin-panel').classList.contains('active');
-            for(var i=0;i<rs.length;i++){ h+=cd(rs[i], i, [], isAdmin); }
+            for(var i=0;i<rs.length;i++){ h+=cd(rs[i], i, [], false); }
             document.getElementById(c+'-products').innerHTML = h;
             window.scrollTo(0,0);
         }
@@ -494,6 +552,7 @@
         
         async function uA() {
             if(!sf.length){ alert('Select images!'); return; }
+            showLoading('Uploading images...');
             const c = document.getElementById('upload-cat').value;
             for(var i=0;i<sf.length;i++) {
                 const fd = new FormData();
@@ -510,6 +569,7 @@
             sf = [];
             document.getElementById('preview-box').innerHTML = '';
             document.getElementById('file-input').value = '';
+            hideLoading();
             alert('✅ Uploaded!');
             sC(c);
         }
@@ -524,6 +584,7 @@
         
         async function setCategoryCover() {
             if(!coverFile){ alert('Please upload a cover image first.'); return; }
+            showLoading('Uploading cover...');
             var cat = document.getElementById('cover-select').value;
             try {
                 const fd = new FormData();
@@ -541,10 +602,11 @@
                     coverFile = null;
                     document.getElementById('cover-input').value = '';
                     document.getElementById('cover-preview').innerHTML = '';
+                    hideLoading();
                     alert('✅ Cover set!');
                     rC();
                 }
-            } catch(e) { alert('Upload failed'); }
+            } catch(e) { hideLoading(); alert('Upload failed'); }
         }
         
         function aL() {
@@ -552,6 +614,7 @@
                 document.getElementById('login-modal').classList.remove('active');
                 document.getElementById('admin-panel').classList.add('active');
                 populateCoverSelect();
+                refreshDeleteList();
             } else {
                 document.getElementById('login-err').style.display = 'block';
             }
@@ -598,7 +661,8 @@
         window.showHome = sH; window.showCollection = sC; window.searchNow = sN;
         window.adminLogin = aL; window.openLogin = oL; window.uploadAll = uA;
         window.previewFiles = pF; window.loadMore = lM; window.loadMoreSearch = lMS;
-        window.deleteImage = deleteImage; window.setCategoryCover = setCategoryCover; window.uploadCover = uploadCover;
+        window.deleteImage = deleteImage; window.refreshDeleteList = refreshDeleteList;
+        window.setCategoryCover = setCategoryCover; window.uploadCover = uploadCover;
     </script>
 </body>
 </html>
