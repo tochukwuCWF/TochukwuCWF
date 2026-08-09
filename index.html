@@ -155,6 +155,16 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .loading-text { color: #c9a84c; margin-top: 15px; font-size: 1rem; font-weight: 600; text-align: center; }
+
+        /* PRIVACY POLICY PAGE STYLES */
+        .privacy-page { display:none; }
+        .privacy-page.active { display:block; }
+        .privacy-content { background:#111; border:1px solid #222; border-radius:12px; padding:25px; max-width:1100px; margin:30px auto; }
+        .privacy-content h1, .privacy-content h2, .privacy-content h3 { font-family:'Playfair Display',serif; color:#c9a84c; }
+        .privacy-content a { color:#c9a84c; text-decoration:none; }
+        .privacy-content a:hover { text-decoration:underline; }
+        .privacy-content ul { list-style-type:disc; padding-left:20px; color:#bbb; }
+        .privacy-content p { color:#aaa; line-height:1.6; }
     </style>
 </head>
 <body>
@@ -310,15 +320,102 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
+    <!-- PRIVACY POLICY PAGE -->
+    <div id="privacy-page" class="privacy-page">
+        <div class="privacy-content">
+            <h1 style="font-size:2rem;margin-bottom:10px;">Privacy Policy</h1>
+            <p style="color:#888;font-size:0.85rem;margin-bottom:25px;">Last updated: August 2026</p>
+
+            <p style="margin-bottom:20px;">
+                At <strong>TCWF (Classic World Furniture)</strong>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by TCWF and how we use it.
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <h2 style="font-size:1.4rem;margin-top:25px;">1. Information We Collect</h2>
+            <p style="margin-bottom:15px;">
+                We collect minimal information to improve your experience. This includes:
+                <ul style="margin-top:8px;">
+                    <li><strong>Log Data:</strong> Your browser type, operating system, IP address, and the pages you visit on our site.</li>
+                    <li><strong>Cookies:</strong> Small data files stored on your device to remember your preferences and enable ad targeting.</li>
+                </ul>
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <h2 style="font-size:1.4rem;margin-top:25px;">2. How We Use Your Information</h2>
+            <p style="margin-bottom:15px;">
+                We use the information we collect to:
+                <ul style="margin-top:8px;">
+                    <li>Operate and maintain our website.</li>
+                    <li>Improve user experience and website performance.</li>
+                    <li>Serve relevant advertisements via third-party ad networks.</li>
+                </ul>
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <h2 style="font-size:1.4rem;margin-top:25px;">3. Third-Party Ad Networks</h2>
+            <p style="margin-bottom:15px;">
+                We use third-party ad networks to serve ads on our site. These networks may use cookies and other tracking technologies to collect information about your browsing behavior.
+            </p>
+
+            <p style="margin-bottom:15px;">
+                <strong>Google AdSense</strong> – Google uses cookies to serve ads based on your previous visits to our site and other websites. You can learn more about Google’s privacy practices at:
+                <br><a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a>
+            </p>
+
+            <p style="margin-bottom:15px;">
+                <strong>PopAds</strong> – PopAds may use cookies and other technologies to deliver pop-under advertisements. You can read their privacy policy at:
+                <br><a href="https://www.popads.net/privacy" target="_blank">https://www.popads.net/privacy</a>
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <h2 style="font-size:1.4rem;margin-top:25px;">4. Your Privacy Rights</h2>
+            <p style="margin-bottom:15px;">
+                You have the right to:
+                <ul style="margin-top:8px;">
+                    <li><strong>Opt-out of cookies:</strong> You can disable cookies in your browser settings.</li>
+                    <li><strong>Opt-out of Google AdSense personalization:</strong> Visit <a href="https://adssettings.google.com" target="_blank">https://adssettings.google.com</a>.</li>
+                    <li><strong>Request data deletion:</strong> Contact us via WhatsApp or email to request deletion of any personal data we may hold.</li>
+                </ul>
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <h2 style="font-size:1.4rem;margin-top:25px;">5. Contact Us</h2>
+            <p style="margin-bottom:15px;">
+                If you have any questions about this Privacy Policy, you can contact us:
+                <ul style="margin-top:8px;">
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/2349135357118" target="_blank">+234 913 535 7118</a></li>
+                    <li><strong>Engineer:</strong> Tochukwu</li>
+                </ul>
+            </p>
+
+            <hr style="border-color:#222;margin:20px 0;">
+
+            <p style="color:#666;font-size:0.75rem;text-align:center;margin-top:15px;">
+                This Privacy Policy was last updated on August 2026 and applies to TCWF - Classic World Furniture.
+            </p>
+            
+            <div style="text-align:center;margin-top:20px;">
+                <button onclick="showHome()" style="background:#c9a84c;color:#000;border:none;padding:8px 20px;border-radius:20px;font-weight:600;cursor:pointer;">← Back to Home</button>
+            </div>
+        </div>
+    </div>
+
     <!-- CONTACT -->
-    <section style="max-width:1100px;margin:15px auto;padding:12px;">
+    <section id="contact-section" style="max-width:1100px;margin:15px auto;padding:12px;">
         <div style="background:#111;border-radius:10px;padding:15px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
             <div><p style="color:#aaa;font-size:0.65rem;">Contact Engineer</p><p style="font-size:1rem;font-weight:bold;">Tochukwu</p><p style="color:#c9a84c;font-size:0.8rem;">09135357118</p></div>
             <a href="https://wa.me/2349135357118" target="_blank" style="background:#25D366;color:#fff;padding:8px 15px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.8rem;">💬 WhatsApp</a>
         </div>
     </section>
 
-    <footer style="text-align:center;padding:15px;color:#555;font-size:0.65rem;">© 2026 TCWF · Classic World Furniture</footer>
+    <footer style="text-align:center;padding:15px;color:#555;font-size:0.65rem;">
+        © 2026 TCWF · Classic World Furniture · <a href="#" onclick="showPrivacy();return false;" style="color:#c9a84c;">Privacy Policy</a>
+    </footer>
     <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
@@ -503,6 +600,7 @@
             for(var i=0;i<s.length;i++){ s[i].classList.remove('active'); }
             document.getElementById('home-section').style.display = 'none';
             document.getElementById('home-cats').style.display = 'none';
+            document.getElementById('privacy-page').classList.remove('active');
         }
         
         async function sC(c) {
@@ -539,7 +637,17 @@
             for(var i=0;i<s.length;i++){ s[i].classList.remove('active'); }
             document.getElementById('home-section').style.display = 'flex';
             document.getElementById('home-cats').style.display = 'block';
+            document.getElementById('privacy-page').classList.remove('active');
             rC();
+            window.scrollTo(0,0);
+        }
+
+        function showPrivacy() {
+            var s = document.querySelectorAll('.collection-section');
+            for(var i=0;i<s.length;i++){ s[i].classList.remove('active'); }
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('home-cats').style.display = 'none';
+            document.getElementById('privacy-page').classList.add('active');
             window.scrollTo(0,0);
         }
         
@@ -663,6 +771,7 @@
         window.previewFiles = pF; window.loadMore = lM; window.loadMoreSearch = lMS;
         window.deleteImage = deleteImage; window.refreshDeleteList = refreshDeleteList;
         window.setCategoryCover = setCategoryCover; window.uploadCover = uploadCover;
+        window.showPrivacy = showPrivacy;
     </script>
 </body>
 </html>
