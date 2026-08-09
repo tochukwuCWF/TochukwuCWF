@@ -108,28 +108,32 @@
             60% { transform: translateX(-50%) translateY(8px); opacity: 0.8; }
         }
 
-        /* FLOATING TOOLS - RAINING LIKE SNOW */
+        /* FLOATING TOOLS - RAINING LIKE SNOW (RANDOM & CONTINUOUS) */
         .floating-tool {
             position: fixed;
             pointer-events: none;
             z-index: 100;
-            width: 35px;
+            width: 30px;
             height: auto;
-            opacity: 0.7;
-            animation: rainDown 8s linear infinite;
+            opacity: 0.6;
+            animation: rainDown linear infinite;
         }
         @keyframes rainDown {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.7; }
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.6; }
             100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
         }
-        .tool-hammer { left: 10%; animation-duration: 10s; animation-delay: 0s; }
-        .tool-saw { left: 50%; animation-duration: 12s; animation-delay: 3s; }
-        .tool-drill { left: 80%; animation-duration: 9s; animation-delay: 6s; }
+        .tool-hammer { left: 8%; animation-duration: 11s; animation-delay: 0s; }
+        .tool-saw { left: 30%; animation-duration: 14s; animation-delay: 2s; }
+        .tool-drill { left: 55%; animation-duration: 9s; animation-delay: 4s; }
+        .tool-hammer2 { left: 75%; animation-duration: 13s; animation-delay: 6s; }
+        .tool-saw2 { left: 92%; animation-duration: 10s; animation-delay: 8s; }
         @media (max-width: 600px) {
-            .floating-tool { width: 25px; opacity: 0.5; }
+            .floating-tool { width: 20px; opacity: 0.4; }
             .tool-hammer { left: 5%; }
-            .tool-saw { left: 45%; }
-            .tool-drill { left: 75%; }
+            .tool-saw { left: 25%; }
+            .tool-drill { left: 50%; }
+            .tool-hammer2 { left: 70%; }
+            .tool-saw2 { left: 90%; }
         }
     </style>
 </head>
@@ -138,10 +142,12 @@
     <!-- 👇 SCROLL DOWN ARROW - FIXED ON ALL PAGES -->
     <div class="scroll-down-arrow" id="scrollArrow">👇</div>
 
-    <!-- FLOATING TOOLS - RAINING LIKE SNOW -->
+    <!-- FLOATING TOOLS - RAINING LIKE SNOW (RANDOM & CONTINUOUS) -->
     <img src="https://i.ibb.co/whS8fCx8/hammer-PNG103344.png" class="floating-tool tool-hammer" alt="Hammer">
     <img src="https://i.ibb.co/yn21NXwV/hand-saw-PNG9539.png" class="floating-tool tool-saw" alt="Saw">
     <img src="https://i.ibb.co/Jw8yDcnB/electric-drill-mock-up-on-transparent-background-png.png" class="floating-tool tool-drill" alt="Drill">
+    <img src="https://i.ibb.co/whS8fCx8/hammer-PNG103344.png" class="floating-tool tool-hammer2" alt="Hammer2">
+    <img src="https://i.ibb.co/yn21NXwV/hand-saw-PNG9539.png" class="floating-tool tool-saw2" alt="Saw2">
 
     <!-- AD 1: TOP -->
     <div class="ad-box">
@@ -153,13 +159,13 @@
     <!-- HEADER -->
     <header style="background:#080808;border-bottom:1px solid #1a1a1a;position:sticky;top:0;z-index:50;padding:0 10px;">
         <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;flex-wrap:wrap;gap:6px;">
-            <div style="display:flex;align-items:center;gap:10px;">
+            <div style="display:flex;align-items:center;gap:12px;">
                 <a href="#" onclick="showHome();return false;" style="text-decoration:none;text-align:center;">
                     <div class="logo-border"><span class="logo-main">TCWF</span></div>
                     <div class="logo-subtitle">CLASSIC WORLD FURNITURE</div>
                 </a>
-                <!-- ENGINEER TOCHUKWU PICTURE BESIDE LOGO -->
-                <div style="width:45px;height:45px;border-radius:50%;overflow:hidden;border:2px solid #c9a84c;box-shadow:0 0 15px rgba(201,168,76,0.3);flex-shrink:0;">
+                <!-- ENGINEER TOCHUKWU PICTURE - BIGGER & VISIBLE -->
+                <div style="width:55px;height:55px;border-radius:50%;overflow:hidden;border:2px solid #c9a84c;box-shadow:0 0 20px rgba(201,168,76,0.4);flex-shrink:0;">
                     <img src="https://i.ibb.co/Kj7cTqYP/file-000000003d1482468d3b74de4ce538a3.png" alt="Engineer Tochukwu" style="width:100%;height:100%;object-fit:cover;">
                 </div>
             </div>
@@ -290,30 +296,28 @@
     <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
-        var fsUrls=[], fsIdx=0;
-        function openFullscreen(u, i) {
-            fsUrls = u;
-            fsIdx = i;
-            if(u && u.length > 0 && u[i]) {
-                document.getElementById('fs-image').src = u[i];
-                document.getElementById('fs-counter').textContent = (i+1) + '/' + u.length;
-                document.getElementById('fullscreen-viewer').classList.add('show');
-                document.body.style.overflow = 'hidden';
-            }
+        // SIMPLE IMAGE PREVIEWER - DIRECT URL
+        function viewImage(url) {
+            document.getElementById('fs-image').src = url;
+            document.getElementById('fs-counter').textContent = '1/1';
+            document.getElementById('fullscreen-viewer').classList.add('show');
+            document.body.style.overflow = 'hidden';
+            fsUrls = [url];
+            fsIdx = 0;
         }
+        
         function closeFullscreen() {
             document.getElementById('fullscreen-viewer').classList.remove('show');
             document.body.style.overflow = '';
         }
+        
         function fsNav(d) {
-            if(fsUrls && fsUrls.length > 0) {
-                fsIdx = (fsIdx + d + fsUrls.length) % fsUrls.length;
-                document.getElementById('fs-image').src = fsUrls[fsIdx];
-                document.getElementById('fs-counter').textContent = (fsIdx+1) + '/' + fsUrls.length;
-            }
+            fsIdx = (fsIdx + d + fsUrls.length) % fsUrls.length;
+            document.getElementById('fs-image').src = fsUrls[fsIdx];
+            document.getElementById('fs-counter').textContent = (fsIdx+1) + '/' + fsUrls.length;
         }
+        
         async function fsSave() {
-            if(!fsUrls || fsUrls.length === 0) return;
             var u = fsUrls[fsIdx];
             try {
                 var r = await fetch(u);
@@ -324,8 +328,8 @@
                 a.click();
             } catch(e) { window.open(u); }
         }
+        
         async function fsDownload() {
-            if(!fsUrls || fsUrls.length === 0) return;
             var u = fsUrls[fsIdx];
             try {
                 var r = await fetch(u);
@@ -336,12 +340,15 @@
                 a.click();
             } catch(e) { window.open(u); }
         }
+        
         document.addEventListener('keydown', function(e) {
             if (!document.getElementById('fullscreen-viewer').classList.contains('show')) return;
             if (e.key === 'Escape') closeFullscreen();
             if (e.key === 'ArrowLeft') fsNav(-1);
             if (e.key === 'ArrowRight') fsNav(1);
         });
+        
+        var fsUrls = [], fsIdx = 0;
         
         const PL = {bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400',dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400',tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400',tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400'};
         const CATS = ['bedroom','livingroom','dining','tables','tvstands'];
@@ -372,7 +379,7 @@
             var delBtn = isAdmin ? '<button class="admin-delete-btn" onclick="event.stopPropagation();deleteImage(\''+p.id+'\',\''+p.category+'\')">✕</button>' : '';
             var waMsg = "Hello Engineer Tochukwu, I want to order this";
             var waUrl = "https://wa.me/2349135357118?text=" + encodeURIComponent(waMsg) + "%0A%0A" + encodeURIComponent(p.url);
-            return '<div class="product-card" onclick="openFullscreen('+JSON.stringify(u)+','+i+')">'+delBtn+'<img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p><a href="'+waUrl+'" target="_blank" style="display:inline-block;margin-top:4px;background:#25D366;color:#fff;padding:2px 10px;border-radius:12px;text-decoration:none;font-size:0.6rem;font-weight:600;">💬 Order</a></div></div>';
+            return '<div class="product-card" onclick="viewImage(\''+p.url+'\')">'+delBtn+'<img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p><a href="'+waUrl+'" target="_blank" style="display:inline-block;margin-top:4px;background:#25D366;color:#fff;padding:2px 10px;border-radius:12px;text-decoration:none;font-size:0.6rem;font-weight:600;">💬 Order</a></div></div>';
         }
         
         async function deleteImage(id,cat) {
@@ -586,7 +593,7 @@
         });
         
         window.sH = sH; window.sC = sC; window.sN = sN; window.aL = aL; window.oL = oL; window.uA = uA;
-        window.pF = pF; window.openFullscreen = openFullscreen; window.closeFullscreen = closeFullscreen;
+        window.pF = pF; window.viewImage = viewImage; window.closeFullscreen = closeFullscreen;
         window.fsNav = fsNav; window.fsSave = fsSave; window.fsDownload = fsDownload; window.lM = lM; window.lMS = lMS;
         window.showHome = sH; window.showCollection = sC; window.searchNow = sN;
         window.adminLogin = aL; window.openLogin = oL; window.uploadAll = uA;
