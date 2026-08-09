@@ -88,6 +88,19 @@
             75% { box-shadow: 0 0 12px #6bcfff, 0 0 30px #6bcfff; border-color: #6bcfff; }
             100% { box-shadow: 0 0 8px #c9a84c, 0 0 20px #c9a84c; border-color: #c9a84c; }
         }
+        
+        /* Scroll down arrow animation */
+        .scroll-down-arrow {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            animation: bounceArrow 2s infinite;
+        }
+        @keyframes bounceArrow {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); opacity: 0.6; }
+            40% { transform: translateY(10px); opacity: 1; }
+            60% { transform: translateY(5px); opacity: 0.8; }
+        }
     </style>
 </head>
 <body>
@@ -145,6 +158,11 @@
             <h1 style="font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1.1;margin:5px 0;">Crafted for <span style="background:linear-gradient(135deg,#d4b86a,#c9a84c,#a88a2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Comfort.</span></h1>
             <p style="color:#aaa;margin-bottom:12px;font-size:0.8rem;">Quality furniture designs for your home.</p>
             <div class="search-box"><input type="text" id="search-input" placeholder="Search furniture..." onkeypress="if(event.key==='Enter')searchNow()"><button onclick="searchNow()">🔍</button></div>
+            
+            <!-- ANIMATED SCROLL DOWN ARROW -->
+            <div class="scroll-down-arrow">
+                <i class="fas fa-chevron-down" style="color:#c9a84c; font-size:1.8rem;"></i>
+            </div>
         </div>
     </section>
 
@@ -244,7 +262,7 @@
         const PL={bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400',dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400',tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400',tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400'};
         const CATS=['bedroom','livingroom','dining','tables','tvstands'];
         const CL={bedroom:'Bed Designs',livingroom:'Couch Designs',dining:'Dining Designs',tables:'Table Designs',tvstands:'TV Stand Designs'};
-        const CQ={bedroom:'bed design',livingroom:'couch design',dining:'dining table design',tables:'table design',tvstands:'tv console'};
+        const CQ={bedroom:'bed design',livingroom:'couch design',dining:'dining table design',tables:'table design',tvstands:'Modern Wood living room media cabinet designs'};
         let ap=[],sf=[],pn={bedroom:1,livingroom:1,dining:1,tables:1,tvstands:1,search:1},cq='';
         let coverFile = null;
         let coverCat = '';
