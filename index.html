@@ -2,279 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TCWF | Classic World Furniture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
-    <!-- Google AdSense -->
+    <!-- GOOGLE ADSENSE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255632222150139" crossorigin="anonymous"></script>
     
-    <!-- PopAds -->
+    <!-- POPADS -->
     <script type="text/javascript" data-cfasync="false">
     (function(){var q=window,i="ab1ac711051636ea677165e87cf60e67",o=[["siteId",288+411-92+5315090],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],c=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL2lwdXNoLm1pbi5jc3M=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvZVdwL2xvei5taW4uanM="],l=-1,y,b,t=function(){clearTimeout(b);l++;if(c[l]&&!(1811801901000<(new Date).getTime()&&1<l)){y=q.document.createElement("script");y.type="text/javascript";y.async=!0;var e=q.document.getElementsByTagName("script")[0];y.src="https://"+atob(c[l]);y.crossOrigin="anonymous";y.onerror=t;y.onload=function(){clearTimeout(b);q[i.slice(0,16)+i.slice(0,16)]||t()};b=setTimeout(t,5E3);e.parentNode.insertBefore(y,e)}};if(!q[i]){try{Object.freeze(q[i]=o)}catch(e){}t()}})();
+    </script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { gold: '#c9a84c', darkBg: '#080808', cardBg: '#111', textMuted: '#8a8a8a' } },
+                    fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] }
+                }
+            }
+        }
+        
+        const CONFIG = {
+            UNSPLASH_ACCESS_KEY: 'JdDYqGvG8x9BQtEX8gB1CHOJ7394qW3AlhC1DCtts8M',
+            ADMIN_PASSWORD: 'tochukwu',
+            CEO_PHONE: '2349135357118',
+            SHEETDB_API: 'https://sheetdb.io/api/v1/do2vt832snpzd',
+            IMGBB_API_KEY: 'a408161fc9da7f32e63c081974794882'
+        };
     </script>
     
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body { background:#080808; color:#fff; font-family:'Inter',sans-serif; }
-        
-        /* ANIMATED LOGO */
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: 2rem;
-            letter-spacing: 0.2em;
-            background: linear-gradient(90deg, #c9a84c, #f5d782, #e0c87c, #c9a84c);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: logoShine 3s linear infinite;
-            display: inline-block;
-        }
-        @keyframes logoShine {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .logo-border {
-            border: 2px solid #c9a84c;
-            box-shadow: 0 0 20px rgba(201,168,76,0.3);
-            padding: 0.3rem 1.2rem;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        .logo-subtitle {
-            font-size: 0.55rem;
-            letter-spacing: 0.35em;
-            color: #c9a84c;
-            margin-top: 0.3rem;
-            font-weight: 700;
-        }
-        
-        /* PRODUCT GRID */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 0.8rem;
-        }
-        .product-card {
-            cursor: pointer;
-            background: #111;
-            border: 1px solid #1a1a1a;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .product-card:active { transform: scale(0.97); }
-        .product-card img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            display: block;
-        }
-        
-        /* CATEGORY CARDS */
-        .category-card {
-            cursor: pointer;
-            background: #111;
-            border: 1px solid #1a1a1a;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.2s;
-        }
-        .category-card:active { transform: scale(0.97); }
-        .category-card img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            display: block;
-        }
-        .blink-text {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.85);
-            color: #fff;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 0.65rem;
-            border: 2px solid #c9a84c;
-            animation: blink 1s infinite;
-            white-space: nowrap;
-            pointer-events: none;
-        }
+        .logo-main { font-family:'Playfair Display',serif; font-weight:900; font-size:1.8rem; letter-spacing:0.2em; background:linear-gradient(180deg,#f7e08a,#c9a84c,#a88a2e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .logo-border { border:2px solid #c9a84c; box-shadow:0 0 15px rgba(201,168,76,0.3); padding:0.2rem 1rem; border-radius:4px; display:inline-block; }
+        .logo-subtitle { font-size:0.5rem; letter-spacing:0.35em; color:#c9a84c; margin-top:0.3rem; font-weight:700; }
+        .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.6rem; }
+        .product-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:8px; overflow:hidden; }
+        .product-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+        .category-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:10px; overflow:hidden; position:relative; }
+        .category-card img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+        .blink-text { position:absolute; top:8px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 14px; border-radius:20px; font-weight:800; font-size:0.65rem; border:2px solid #c9a84c; animation:blink 1s infinite; white-space:nowrap; pointer-events:none; }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        .collection-section { display:none; }
+        .collection-section.active { display:block; }
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center; }
+        .modal.active { display:flex; }
+        .modal-content { background:#1a1a1a; border:1px solid #333; border-radius:12px; padding:18px; max-width:90%; width:380px; }
         
-        /* FULL SCREEN VIEWER */
-        #viewer {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #000;
-            z-index: 9999;
-        }
-        #viewer img {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .viewer-close {
-            position: fixed;
-            top: 15px; right: 15px;
-            background: rgba(255,0,0,0.8);
-            color: #fff;
-            border: none;
-            font-size: 22px;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10000;
-        }
-        .viewer-nav {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            border: none;
-            font-size: 24px;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10000;
-        }
-        .viewer-prev { left: 10px; }
-        .viewer-next { right: 10px; }
-        .viewer-bottom {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10000;
-        }
-        .viewer-bottom button, .viewer-bottom a {
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-weight: 700;
-            border: none;
-            text-decoration: none;
-            font-size: 0.8rem;
-            cursor: pointer;
-        }
-        .btn-save { background: #c9a84c; color: #000; }
-        .btn-wa { background: #25D366; color: #fff; }
+        #fullscreen-viewer { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:99999; }
+        #fullscreen-viewer.show { display:block; }
+        #fullscreen-viewer img { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); max-width:100%; max-height:100%; object-fit:contain; }
+        #fullscreen-viewer .fs-close { position:fixed; top:12px; right:12px; background:rgba(255,0,0,0.8); color:#fff; border:none; font-size:22px; width:36px; height:36px; border-radius:50%; cursor:pointer; z-index:100000; }
+        #fullscreen-viewer .fs-nav { position:fixed; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); color:#fff; border:none; font-size:26px; width:40px; height:40px; border-radius:50%; cursor:pointer; z-index:100000; }
+        .fs-prev { left:8px; } .fs-next { right:8px; }
+        #fullscreen-viewer .fs-counter { position:fixed; top:12px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.6); padding:4px 12px; border-radius:12px; font-weight:700; font-size:0.8rem; z-index:100000; }
+        #fullscreen-viewer .fs-bottom { position:fixed; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:100000; }
+        #fullscreen-viewer .fs-bottom button, #fullscreen-viewer .fs-bottom a { padding:10px 16px; border-radius:25px; font-weight:700; border:none; text-decoration:none; font-size:0.8rem; }
+        .fs-save { background:#c9a84c; color:#000; }
+        .fs-wa { background:#25D366; color:#fff; }
         
-        /* AD OVERLAY */
-        #ad-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 99999;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .ad-box-inner {
-            background: #111;
-            border: 2px solid #c9a84c;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            max-width: 350px;
-            width: 90%;
-        }
+        .ad-box { text-align:center; margin:12px auto; max-width:350px; padding:6px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; overflow:hidden; }
+        .ad-label { color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px; }
         
-        /* ADMIN PANEL */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal.active { display: flex; }
-        .modal-content {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            max-width: 500px;
-            width: 92%;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-        
-        .btn-gold {
-            background: #c9a84c;
-            color: #000;
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-        .btn-green {
-            background: #27ae60;
-            color: #fff;
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .ad-banner {
-            text-align: center;
-            margin: 12px auto;
-            max-width: 350px;
-            padding: 6px;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
-            min-height: 60px;
-        }
+        .search-box { display:flex; max-width:100%; }
+        .search-box input { flex:1; padding:12px 14px; background:#111; border:2px solid #333; color:#fff; border-radius:25px 0 0 25px; font-size:0.85rem; min-width:0; }
+        .search-box input:focus { border-color:#c9a84c; outline:none; }
+        .search-box button { padding:12px 18px; background:#c9a84c; color:#000; border:none; border-radius:0 25px 25px 0; font-weight:700; cursor:pointer; }
+        .btn-gold { background:#c9a84c; color:#000; font-weight:600; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; width:100%; }
+        .btn-green { background:#27ae60; color:#fff; font-weight:600; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; width:100%; }
+        .hero-bg { background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920'); background-size:cover; background-position:center; }
+        .load-more-btn { display:block; margin:15px auto; padding:10px 25px; background:#c9a84c; color:#000; border:none; border-radius:20px; font-weight:700; cursor:pointer; font-size:0.8rem; }
     </style>
 </head>
 <body>
 
-    <!-- TOP AD -->
-    <div class="ad-banner">
+    <!-- AD 1: TOP -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- HEADER -->
     <header style="background:#080808;border-bottom:1px solid #1a1a1a;position:sticky;top:0;z-index:50;padding:0 10px;">
-        <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:65px;flex-wrap:wrap;gap:6px;">
+        <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;flex-wrap:wrap;gap:6px;">
             <a href="#" onclick="showHome();return false;" style="text-decoration:none;text-align:center;">
-                <div class="logo-border"><span class="logo-text">TCWF</span></div>
+                <div class="logo-border"><span class="logo-main">TCWF</span></div>
                 <div class="logo-subtitle">CLASSIC WORLD FURNITURE</div>
             </a>
-            <nav style="display:flex;gap:8px;font-size:0.7rem;font-weight:500;flex-wrap:wrap;">
+            <nav style="display:flex;gap:6px;font-size:0.65rem;font-weight:500;flex-wrap:wrap;">
                 <a href="#" onclick="showHome();return false;" style="color:#c9a84c;">Home</a>
                 <a href="#" onclick="showCollection('bedroom');return false;" style="color:#aaa;">Beds</a>
                 <a href="#" onclick="showCollection('livingroom');return false;" style="color:#aaa;">Sofas</a>
@@ -282,339 +103,162 @@
                 <a href="#" onclick="showCollection('tables');return false;" style="color:#aaa;">Tables</a>
                 <a href="#" onclick="showCollection('tvstands');return false;" style="color:#aaa;">TV Stands</a>
             </nav>
-            <button onclick="openLogin()" style="background:transparent;border:1px solid #c9a84c;color:#c9a84c;padding:5px 10px;border-radius:5px;font-size:0.65rem;cursor:pointer;">🔐 Admin</button>
+            <button onclick="openLogin()" style="background:transparent;border:1px solid #c9a84c;color:#c9a84c;padding:4px 8px;border-radius:5px;font-size:0.65rem;cursor:pointer;">🔐</button>
         </div>
     </header>
 
-    <!-- LOGIN MODAL -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <h3 style="color:#c9a84c;margin-bottom:10px;">Admin Login</h3>
-            <input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;">
-            <button onclick="adminLogin()" class="btn-gold">Login</button>
-            <p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong password!</p>
-        </div>
-    </div>
-
-    <!-- ADMIN PANEL -->
-    <div id="admin-panel" class="modal">
-        <div class="modal-content">
-            <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
-                <h3 style="color:#c9a84c;">Admin Panel</h3>
-                <button onclick="closeAdmin()" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button>
-            </div>
-            
-            <!-- Upload -->
-            <select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;">
-                <option value="bedroom">🛏️ Bedroom</option>
-                <option value="livingroom">🛋️ Living Room</option>
-                <option value="dining">🍽️ Dining</option>
-                <option value="tables">📐 Tables</option>
-                <option value="tvstands">📺 TV Stands</option>
-            </select>
-            <div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;">
-                <p style="color:#fff;">📁 Tap to select images</p>
-                <input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()">
-            </div>
-            <div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div>
-            <button onclick="uploadAll()" class="btn-gold" style="margin-bottom:12px;">📤 Upload</button>
-            
-            <!-- Manage -->
-            <div style="border-top:1px solid #222;padding-top:10px;">
-                <p style="color:#fff;margin-bottom:6px;">📋 Manage Images</p>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;" id="manage-cats"></div>
-                <div id="manage-grid" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
-            </div>
-        </div>
-    </div>
+    <!-- LOGIN -->
+    <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
+    
+    <!-- ADMIN -->
+    <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
-    <div id="viewer">
-        <button class="viewer-close" onclick="closeViewer()">✕</button>
-        <button class="viewer-nav viewer-prev" onclick="navViewer(-1)">◀</button>
-        <button class="viewer-nav viewer-next" onclick="navViewer(1)">▶</button>
-        <img id="viewer-img" src="" alt="Furniture">
-        <div class="viewer-bottom">
-            <button class="btn-save" onclick="startDownload()">💾 Download</button>
-            <a class="btn-wa" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank">💬 WhatsApp</a>
-        </div>
-    </div>
-
-    <!-- AD OVERLAY FOR DOWNLOAD -->
-    <div id="ad-overlay">
-        <div class="ad-box-inner">
-            <p style="color:#c9a84c;font-weight:700;">📢 Advertisement</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            <p id="ad-timer-text" style="color:#aaa;font-size:0.8rem;margin-top:8px;">Please wait 5 seconds...</p>
-            <button id="ad-skip-btn" onclick="finishDownload()" disabled style="margin-top:10px;background:#c9a84c;color:#000;border:none;padding:10px 20px;border-radius:25px;font-weight:700;opacity:0.6;">Please wait...</button>
+    <div id="fullscreen-viewer">
+        <span class="fs-counter" id="fs-counter">1/1</span>
+        <button class="fs-close" onclick="closeFullscreen()">✕</button>
+        <button class="fs-nav fs-prev" onclick="fsNav(-1)">◀</button>
+        <button class="fs-nav fs-next" onclick="fsNav(1)">▶</button>
+        <img id="fs-image" src="" alt="Furniture">
+        <div class="fs-bottom">
+            <button class="fs-save" onclick="fsSave()">💾 Save</button>
+            <a class="fs-wa" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank">💬 WhatsApp</a>
         </div>
     </div>
 
     <!-- HERO -->
     <section id="home-section" class="hero-bg" style="min-height:45vh;display:flex;align-items:center;padding:25px 12px;">
-        <div>
+        <div style="max-width:100%;">
             <p style="color:#c9a84c;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Premium Furniture</p>
-            <h1 style="font-family:'Playfair Display',serif;font-size:2rem;line-height:1.1;margin:5px 0;">Crafted for <span style="background:linear-gradient(135deg,#d4b86a,#c9a84c,#a88a2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Comfort.</span></h1>
-            <div style="display:flex;max-width:400px;margin-top:12px;">
-                <input type="text" id="search-input" placeholder="Search furniture..." style="flex:1;padding:10px;background:#111;border:2px solid #333;color:#fff;border-radius:25px 0 0 25px;">
-                <button onclick="searchNow()" style="padding:10px 16px;background:#c9a84c;color:#000;border:none;border-radius:0 25px 25px 0;font-weight:700;">🔍</button>
-            </div>
+            <h1 style="font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1.1;margin:5px 0;">Crafted for <span style="background:linear-gradient(135deg,#d4b86a,#c9a84c,#a88a2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Comfort.</span></h1>
+            <p style="color:#aaa;margin-bottom:12px;font-size:0.8rem;">Quality furniture designs for your home.</p>
+            <div class="search-box"><input type="text" id="search-input" placeholder="Search furniture..." onkeypress="if(event.key==='Enter')searchNow()"><button onclick="searchNow()">🔍</button></div>
         </div>
     </section>
 
+    <!-- AD 2 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
     <!-- CATEGORIES -->
     <section id="home-cats" style="max-width:1100px;margin:0 auto;padding:25px 12px;">
-        <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:20px;">Shop By Category</h2>
+        <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:20px;">Shop By Category</h2>
         <div id="cats-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;"></div>
     </section>
 
-    <!-- COLLECTIONS -->
-    <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div></div>
-    <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div></div>
-    <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div></div>
-    <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div></div>
-    <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div></div>
+    <!-- AD 3 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- SEARCH -->
+    <div id="search-section" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🔍 Results</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="search-products"></div><button class="load-more-btn" id="search-load-more" onclick="loadMoreSearch()" style="display:none;">Load More</button></div>
+
+    <!-- BEDS -->
+    <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div><button class="load-more-btn" onclick="loadMore('bedroom')">Load More</button></div>
+    
+    <!-- AD 4 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- SOFAS -->
+    <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div><button class="load-more-btn" onclick="loadMore('livingroom')">Load More</button></div>
+    
+    <!-- AD 5 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- DINING -->
+    <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div><button class="load-more-btn" onclick="loadMore('dining')">Load More</button></div>
+    
+    <!-- AD 6 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- TABLES -->
+    <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div><button class="load-more-btn" onclick="loadMore('tables')">Load More</button></div>
+    
+    <!-- AD 7 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- TV STANDS -->
+    <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div><button class="load-more-btn" onclick="loadMore('tvstands')">Load More</button></div>
+    
+    <!-- AD 8 -->
+    <div class="ad-box">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <!-- CONTACT -->
     <section style="max-width:1100px;margin:15px auto;padding:12px;">
         <div style="background:#111;border-radius:10px;padding:15px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-            <div><p>Contact Engineer</p><p style="font-weight:bold;">Tochukwu</p><p style="color:#c9a84c;">09135357118</p></div>
-            <a href="https://wa.me/2349135357118" target="_blank" style="background:#25D366;color:#fff;padding:8px 15px;border-radius:6px;text-decoration:none;font-weight:600;">💬 WhatsApp</a>
+            <div><p style="color:#aaa;font-size:0.65rem;">Contact Engineer</p><p style="font-size:1rem;font-weight:bold;">Tochukwu</p><p style="color:#c9a84c;font-size:0.8rem;">09135357118</p></div>
+            <a href="https://wa.me/2349135357118" target="_blank" style="background:#25D366;color:#fff;padding:8px 15px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.8rem;">💬 WhatsApp</a>
         </div>
     </section>
 
-    <footer style="text-align:center;padding:15px;color:#555;">© 2026 TCWF</footer>
+    <footer style="text-align:center;padding:15px;color:#555;font-size:0.65rem;">© 2026 TCWF · Classic World Furniture</footer>
+    <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
-        const CONFIG = {
-            UNSPLASH_KEY: 'JdDYqGvG8x9BQtEX8gB1CHOJ7394qW3AlhC1DCtts8M',
-            ADMIN_PASS: 'tochukwu',
-            SHEETDB: 'https://sheetdb.io/api/v1/do2vt832snpzd',
-            IMGBB_KEY: 'a408161fc9da7f32e63c081974794882'
-        };
+        var fsUrls=[],fsIdx=0;
+        function openFullscreen(u,i){fsUrls=u;fsIdx=i;document.getElementById('fs-image').src=u[i];document.getElementById('fs-counter').textContent=(i+1)+'/'+u.length;document.getElementById('fullscreen-viewer').classList.add('show');document.body.style.overflow='hidden';}
+        function closeFullscreen(){document.getElementById('fullscreen-viewer').classList.remove('show');document.body.style.overflow='';}
+        function fsNav(d){fsIdx=(fsIdx+d+fsUrls.length)%fsUrls.length;document.getElementById('fs-image').src=fsUrls[fsIdx];document.getElementById('fs-counter').textContent=(fsIdx+1)+'/'+fsUrls.length;}
+        async function fsSave(){var u=fsUrls[fsIdx];try{var r=await fetch(u);var b=await r.blob();var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='TCWF-'+Date.now()+'.jpg';a.click();}catch(e){window.open(u);}}
+        document.addEventListener('keydown',function(e){if(!document.getElementById('fullscreen-viewer').classList.contains('show'))return;if(e.key==='Escape')closeFullscreen();if(e.key==='ArrowLeft')fsNav(-1);if(e.key==='ArrowRight')fsNav(1);});
         
-        let allProducts = [];
-        let selectedFiles = [];
-        let viewerUrls = [];
-        let viewerIdx = 0;
-        let downloadUrl = '';
-        let adTimer = null;
+        const PL={bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400',dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400',tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400',tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400'};
+        const CATS=['bedroom','livingroom','dining','tables','tvstands'];
+        const CL={bedroom:'Bed Designs',livingroom:'Couch Designs',dining:'Dining Designs',tables:'Table Designs',tvstands:'TV Stand Designs'};
+        const CQ={bedroom:'bed design',livingroom:'couch design',dining:'dining table design',tables:'table design',tvstands:'tv stand design'};
+        let ap=[],sf=[],pn={bedroom:1,livingroom:1,dining:1,tables:1,tvstands:1,search:1},cq='';
         
-        const CATS = ['bedroom','livingroom','dining','tables','tvstands'];
-        const CAT_LABELS = { bedroom:'Bed Designs', livingroom:'Couch Designs', dining:'Dining Designs', tables:'Table Designs', tvstands:'TV Stand Designs' };
-        const CAT_QUERIES = { bedroom:'bed design', livingroom:'couch design', dining:'dining table', tables:'table design', tvstands:'tv stand' };
-        const PL = { bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400', livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400', dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400', tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400', tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400' };
+        async function lS(){try{const r=await fetch(CONFIG.SHEETDB_API);ap=await r.json();ap=ap.map(p=>({...p,category:(p.category||p['category ']||'').trim()}));}catch(e){ap=[];}}
+        async function fC(){if(!confirm('Move ALL bedroom images to Living Room?'))return;await lS();const it=ap.filter(p=>p.category==='bedroom');if(!it.length){alert('No images!');return;}let c=0;for(const i of it){try{await fetch(CONFIG.SHEETDB_API+'/id/'+i.id,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:'livingroom'})});c++;}catch(e){}}await lS();alert('✅ Moved '+c+' images!');showCollection('livingroom');}
+        async function fU(q,p,n){p=p||1;n=n||20;try{const r=await fetch('https://api.unsplash.com/search/photos?query='+encodeURIComponent(q)+'&per_page='+n+'&page='+p+'&client_id='+CONFIG.UNSPLASH_ACCESS_KEY);const d=await r.json();return d.results.map(function(i){return{id:i.id,url:i.urls.regular,name:i.alt_description||q};});}catch(e){return[];}}
+        function cd(p,i,u){return'<div class="product-card" onclick="openFullscreen('+JSON.stringify(u)+','+i+')"><img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p></div></div>';}
+        async function lM(c){pn[c]++;const b=document.querySelector('#'+c+'-collection .load-more-btn');if(b)b.textContent='Loading...';const im=await fU(CQ[c],pn[c],20);if(im.length){const cn=document.getElementById(c+'-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;if(b)b.textContent='Load More';}}
+        async function lMS(){pn.search++;document.getElementById('search-load-more').textContent='Loading...';const im=await fU(cq,pn.search,20);if(im.length){const cn=document.getElementById('search-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;document.getElementById('search-load-more').textContent='Load More';}}
+        async function sN(){const q=document.getElementById('search-input').value.trim();if(!q)return;cq=q+' design furniture';pn.search=1;hA();document.getElementById('search-section').classList.add('active');document.getElementById('search-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Searching...</p>';document.getElementById('search-load-more').style.display='none';const un=await fU(cq,1,30);await lS();const rs=ap.filter(function(p){return p.name&&p.name.toLowerCase().includes(q.toLowerCase());}).concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u);}document.getElementById('search-products').innerHTML=h;if(rs.length>=30)document.getElementById('search-load-more').style.display='block';window.scrollTo(0,0);}
+        function hA(){var s=document.querySelectorAll('.collection-section');for(var i=0;i<s.length;i++){s[i].classList.remove('active');}document.getElementById('home-section').style.display='none';document.getElementById('home-cats').style.display='none';}
+        async function sC(c){hA();pn[c]=1;var s=document.getElementById(c+'-collection');if(!s)return;s.classList.add('active');document.getElementById(c+'-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Loading...</p>';await lS();const un=await fU(CQ[c],1,24);const sh=ap.filter(function(p){return p.category===c;});const rs=sh.concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u);}document.getElementById(c+'-products').innerHTML=h;window.scrollTo(0,0);}
+        function rC(){var h='';for(var i=0;i<CATS.length;i++){var c=CATS[i];h+='<div class="category-card" onclick="sC(\''+c+'\')"><div style="position:relative;"><img src="'+PL[c]+'"><div class="blink-text">✨ VIEW ✨</div></div><div style="padding:8px;text-align:center;"><h3 style="font-family:\'Playfair Display\',serif;font-size:0.85rem;font-weight:600;">'+CL[c]+'</h3></div></div>';}document.getElementById('cats-grid').innerHTML=h;}
+        function sH(){var s=document.querySelectorAll('.collection-section');for(var i=0;i<s.length;i++){s[i].classList.remove('active');}document.getElementById('home-section').style.display='flex';document.getElementById('home-cats').style.display='block';rC();window.scrollTo(0,0);}
+        function pF(){sf=Array.from(document.getElementById('file-input').files);var h='';for(var i=0;i<sf.length;i++){h+='<img src="'+URL.createObjectURL(sf[i])+'" style="width:55px;height:55px;object-fit:cover;border-radius:5px;">';}document.getElementById('preview-box').innerHTML=h;}
+        async function uA(){if(!sf.length){alert('Select images!');return;}const c=document.getElementById('upload-cat').value;for(var i=0;i<sf.length;i++){const fd=new FormData();fd.append('image',sf[i]);try{const r=await fetch('https://api.imgbb.com/1/upload?key='+CONFIG.IMGBB_API_KEY,{method:'POST',body:fd});const d=await r.json();if(d.success){await fetch(CONFIG.SHEETDB_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:String(Date.now()),category:c,url:d.data.url,name:sf[i].name})});}}catch(e){}}await lS();sf=[];document.getElementById('preview-box').innerHTML='';document.getElementById('file-input').value='';alert('✅ Uploaded!');sC(c);}
+        function aL(){if(document.getElementById('admin-pass').value===CONFIG.ADMIN_PASSWORD){document.getElementById('login-modal').classList.remove('active');document.getElementById('admin-panel').classList.add('active');}else{document.getElementById('login-err').style.display='block';}}
+        function oL(){document.getElementById('login-modal').classList.add('active');document.getElementById('login-err').style.display='none';}
         
-        // LOAD DATA
-        async function loadData() {
-            try { const r = await fetch(CONFIG.SHEETDB); allProducts = await r.json(); allProducts = allProducts.map(p => ({...p, category: (p.category||'').trim()})); } catch(e) { allProducts = []; }
-        }
+        document.addEventListener('click',function(e){if(e.target.classList.contains('modal'))e.target.classList.remove('active');});
+        document.addEventListener('DOMContentLoaded',function(){rC();sH();});
         
-        // RENDER CATEGORIES
-        function renderCats() {
-            document.getElementById('cats-grid').innerHTML = CATS.map(cat => `
-                <div class="category-card" onclick="showCollection('${cat}')">
-                    <div style="position:relative;"><img src="${PL[cat]}"><div class="blink-text">✨ VIEW ✨</div></div>
-                    <div style="padding:8px;text-align:center;"><h3 style="font-family:'Playfair Display',serif;font-weight:600;">${CAT_LABELS[cat]}</h3></div>
-                </div>
-            `).join('');
-        }
-        
-        // SHOW COLLECTION
-        async function showCollection(cat) {
-            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
-            document.getElementById('home-section').style.display='none';
-            document.getElementById('home-cats').style.display='none';
-            const sec = document.getElementById(cat+'-collection');
-            if (sec) {
-                sec.style.display = 'block';
-                await loadData();
-                const sheet = allProducts.filter(p => p.category === cat);
-                const unsplash = await fetchUnsplash(CAT_QUERIES[cat]);
-                const products = [...sheet, ...unsplash];
-                renderProducts(cat+'-products', products);
-                window.scrollTo(0,0);
-            }
-        }
-        
-        async function fetchUnsplash(query) {
-            try {
-                const r = await fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=20&client_id=${CONFIG.UNSPLASH_KEY}`);
-                const d = await r.json();
-                return d.results.map(i => ({ id:i.id, url:i.urls.regular, name:i.alt_description||query }));
-            } catch(e) { return []; }
-        }
-        
-        function renderProducts(containerId, products) {
-            const c = document.getElementById(containerId);
-            if (!c) return;
-            const urls = products.map(p => p.url);
-            c.innerHTML = products.map((p,i) => `
-                <div class="product-card" onclick="openViewer(${JSON.stringify(urls)},${i})">
-                    <img src="${p.url}" loading="lazy">
-                    <div style="padding:6px;"><p style="font-size:0.65rem;color:#ccc;">${(p.name||'Furniture').substring(0,30)}</p></div>
-                </div>
-            `).join('');
-        }
-        
-        // VIEWER
-        function openViewer(urls, idx) {
-            viewerUrls = urls; viewerIdx = idx;
-            document.getElementById('viewer-img').src = urls[idx];
-            document.getElementById('viewer').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeViewer() {
-            document.getElementById('viewer').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-        function navViewer(d) {
-            viewerIdx = (viewerIdx + d + viewerUrls.length) % viewerUrls.length;
-            document.getElementById('viewer-img').src = viewerUrls[viewerIdx];
-        }
-        
-        // DOWNLOAD WITH AD
-        function startDownload() {
-            downloadUrl = viewerUrls[viewerIdx];
-            document.getElementById('ad-overlay').style.display = 'flex';
-            let sec = 5;
-            document.getElementById('ad-timer-text').textContent = 'Please wait ' + sec + ' seconds...';
-            document.getElementById('ad-skip-btn').disabled = true;
-            document.getElementById('ad-skip-btn').style.opacity = '0.6';
-            if (adTimer) clearInterval(adTimer);
-            adTimer = setInterval(() => {
-                sec--;
-                document.getElementById('ad-timer-text').textContent = 'Please wait ' + sec + ' seconds...';
-                if (sec <= 0) {
-                    clearInterval(adTimer);
-                    document.getElementById('ad-timer-text').textContent = 'You can now download';
-                    document.getElementById('ad-skip-btn').disabled = false;
-                    document.getElementById('ad-skip-btn').style.opacity = '1';
-                    document.getElementById('ad-skip-btn').textContent = '⬇️ Download Now';
-                }
-            }, 1000);
-        }
-        function finishDownload() {
-            document.getElementById('ad-overlay').style.display = 'none';
-            if (adTimer) clearInterval(adTimer);
-            const a = document.createElement('a');
-            a.href = downloadUrl;
-            a.download = 'TCWF-' + Date.now() + '.jpg';
-            a.click();
-        }
-        
-        // ADMIN
-        function openLogin() { document.getElementById('login-modal').classList.add('active'); }
-        function adminLogin() {
-            if (document.getElementById('admin-pass').value === CONFIG.ADMIN_PASS) {
-                document.getElementById('login-modal').classList.remove('active');
-                document.getElementById('admin-panel').classList.add('active');
-                buildManageCats();
-            } else {
-                document.getElementById('login-err').style.display = 'block';
-            }
-        }
-        function closeAdmin() { document.getElementById('admin-panel').classList.remove('active'); }
-        
-        function previewFiles() {
-            selectedFiles = Array.from(document.getElementById('file-input').files);
-            document.getElementById('preview-box').innerHTML = selectedFiles.map(f => `<img src="${URL.createObjectURL(f)}" style="width:60px;height:60px;object-fit:cover;border-radius:5px;">`).join('');
-        }
-        
-        async function uploadAll() {
-            if (!selectedFiles.length) { alert('Select images'); return; }
-            const cat = document.getElementById('upload-cat').value;
-            for (const f of selectedFiles) {
-                const fd = new FormData(); fd.append('image', f);
-                const r = await fetch(`https://api.imgbb.com/1/upload?key=${CONFIG.IMGBB_KEY}`, { method:'POST', body:fd });
-                const d = await r.json();
-                if (d.success) {
-                    await fetch(CONFIG.SHEETDB, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ id:Date.now().toString(), category:cat, url:d.data.url, name:f.name }) });
-                }
-            }
-            await loadData();
-            selectedFiles = [];
-            document.getElementById('preview-box').innerHTML = '';
-            document.getElementById('file-input').value = '';
-            alert('✅ Uploaded!');
-            showCollection(cat);
-        }
-        
-        // MANAGE
-        function buildManageCats() {
-            document.getElementById('manage-cats').innerHTML = CATS.map(cat => `<button onclick="showManage('${cat}')" style="background:#222;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer;">${CAT_LABELS[cat]}</button>`).join('');
-        }
-        async function showManage(cat) {
-            await loadData();
-            const items = allProducts.filter(p => p.category === cat);
-            document.getElementById('manage-grid').innerHTML = items.length === 0 ? '<p style="color:#aaa;">No images</p>' : items.map(p => `
-                <div style="position:relative;">
-                    <img src="${p.url}" style="width:70px;height:70px;object-fit:cover;border-radius:5px;">
-                    <span onclick="deleteImg('${p.id}')" style="position:absolute;top:-5px;right:-5px;background:red;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer;">×</span>
-                </div>
-            `).join('');
-        }
-        async function deleteImg(id) {
-            if (!confirm('Delete?')) return;
-            await fetch(`${CONFIG.SHEETDB}/id/${id}`, { method:'DELETE' });
-            await loadData();
-            alert('Deleted');
-            showHome();
-        }
-        
-        // HOME
-        function showHome() {
-            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
-            document.getElementById('home-section').style.display='flex';
-            document.getElementById('home-cats').style.display='block';
-            renderCats();
-            window.scrollTo(0,0);
-        }
-        
-        // SEARCH
-        async function searchNow() {
-            const q = document.getElementById('search-input').value.trim();
-            if (!q) return;
-            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
-            document.getElementById('home-section').style.display='none';
-            document.getElementById('home-cats').style.display='none';
-            const temp = document.createElement('div');
-            temp.className = 'collection-section';
-            temp.style.display = 'block';
-            temp.innerHTML = '<h2>🔍 Results</h2><button onclick="showHome()" style="color:#c9a84c;">← Back</button><div class="product-grid" id="search-results"></div>';
-            document.body.appendChild(temp);
-            const unsplash = await fetchUnsplash(q + ' furniture');
-            await loadData();
-            const sheet = allProducts.filter(p => p.name && p.name.includes(q));
-            renderProducts('search-results', [...sheet, ...unsplash]);
-            window.scrollTo(0,0);
-        }
-        
-        document.addEventListener('keydown', e => {
-            if (document.getElementById('viewer').style.display !== 'block') return;
-            if (e.key === 'Escape') closeViewer();
-            if (e.key === 'ArrowLeft') navViewer(-1);
-            if (e.key === 'ArrowRight') navViewer(1);
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => { renderCats(); showHome(); });
-        
-        window.showHome = showHome;
-        window.showCollection = showCollection;
-        window.searchNow = searchNow;
-        window.openLogin = openLogin;
-        window.adminLogin = adminLogin;
-        window.closeAdmin = closeAdmin;
-        window.previewFiles = previewFiles;
-        window.uploadAll = uploadAll;
-        window.showManage = showManage;
-        window.deleteImg = deleteImg;
-        window.openViewer = openViewer;
-        window.closeViewer = closeViewer;
-        window.navViewer = navViewer;
-        window.startDownload = startDownload;
-        window.finishDownload = finishDownload;
+        window.sH=sH;window.sC=sC;window.sN=sN;window.aL=aL;window.oL=oL;window.uA=uA;
+        window.pF=pF;window.openFullscreen=openFullscreen;window.closeFullscreen=closeFullscreen;
+        window.fsNav=fsNav;window.fsSave=fsSave;window.lM=lM;window.lMS=lMS;window.fC=fC;
+        window.showHome=sH;window.showCollection=sC;window.searchNow=sN;
+        window.adminLogin=aL;window.openLogin=oL;window.uploadAll=uA;
+        window.previewFiles=pF;window.loadMore=lM;window.loadMoreSearch=lMS;window.fixCategories=fC;
     </script>
 </body>
 </html>
