@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
-    <!-- ============================================ -->
     <!-- GOOGLE ADSENSE -->
-    <!-- ============================================ -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255632222150139" crossorigin="anonymous"></script>
     
     <!-- POPADS -->
@@ -68,8 +66,8 @@
         .fs-save { background:#c9a84c; color:#000; }
         .fs-wa { background:#25D366; color:#fff; }
         
-        .ad-box { text-align:center; margin:15px auto; max-width:350px; padding:8px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; overflow:hidden; }
-        .ad-label { color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; }
+        .ad-box { text-align:center; margin:12px auto; max-width:350px; padding:6px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; overflow:hidden; }
+        .ad-label { color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px; }
         
         .search-box { display:flex; max-width:100%; }
         .search-box input { flex:1; padding:12px 14px; background:#111; border:2px solid #333; color:#fff; border-radius:25px 0 0 25px; font-size:0.85rem; min-width:0; }
@@ -83,12 +81,10 @@
 </head>
 <body>
 
-    <!-- ============================================ -->
-    <!-- TOP AD - GOOGLE ADSENSE -->
-    <!-- ============================================ -->
+    <!-- AD 1: TOP -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
@@ -111,8 +107,10 @@
         </div>
     </header>
 
-    <!-- LOGIN/ADMIN same as before -->
+    <!-- LOGIN -->
     <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
+    
+    <!-- ADMIN -->
     <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
@@ -138,10 +136,10 @@
         </div>
     </section>
 
-    <!-- AD AFTER HERO -->
+    <!-- AD 2 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
@@ -151,10 +149,10 @@
         <div id="cats-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;"></div>
     </section>
 
-    <!-- AD AFTER CATEGORIES -->
+    <!-- AD 3 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
@@ -164,50 +162,50 @@
     <!-- BEDS -->
     <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div><button class="load-more-btn" onclick="loadMore('bedroom')">Load More</button></div>
     
-    <!-- AD AFTER BEDS -->
+    <!-- AD 4 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- SOFAS -->
     <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div><button class="load-more-btn" onclick="loadMore('livingroom')">Load More</button></div>
     
-    <!-- AD AFTER SOFAS -->
+    <!-- AD 5 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- DINING -->
     <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div><button class="load-more-btn" onclick="loadMore('dining')">Load More</button></div>
     
-    <!-- AD AFTER DINING -->
+    <!-- AD 6 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- TABLES -->
     <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div><button class="load-more-btn" onclick="loadMore('tables')">Load More</button></div>
     
-    <!-- AD AFTER TABLES -->
+    <!-- AD 7 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- TV STANDS -->
     <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div><button class="load-more-btn" onclick="loadMore('tvstands')">Load More</button></div>
     
-    <!-- AD AFTER TV STANDS -->
+    <!-- AD 8 -->
     <div class="ad-box">
         <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
@@ -223,9 +221,6 @@
     <a href="https://wa.me/2349135357118" target="_blank" style="position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:99;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
 
     <script>
-        // Initialize AdSense
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        
         var fsUrls=[],fsIdx=0;
         function openFullscreen(u,i){fsUrls=u;fsIdx=i;document.getElementById('fs-image').src=u[i];document.getElementById('fs-counter').textContent=(i+1)+'/'+u.length;document.getElementById('fullscreen-viewer').classList.add('show');document.body.style.overflow='hidden';}
         function closeFullscreen(){document.getElementById('fullscreen-viewer').classList.remove('show');document.body.style.overflow='';}
