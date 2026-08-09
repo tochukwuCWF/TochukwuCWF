@@ -2,111 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCWF | Classic World Furniture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255632222150139" crossorigin="anonymous"></script>
     
-    <!-- PopAds (popunder) -->
+    <!-- PopAds -->
     <script type="text/javascript" data-cfasync="false">
     (function(){var q=window,i="ab1ac711051636ea677165e87cf60e67",o=[["siteId",288+411-92+5315090],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],c=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL2lwdXNoLm1pbi5jc3M=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvZVdwL2xvei5taW4uanM="],l=-1,y,b,t=function(){clearTimeout(b);l++;if(c[l]&&!(1811801901000<(new Date).getTime()&&1<l)){y=q.document.createElement("script");y.type="text/javascript";y.async=!0;var e=q.document.getElementsByTagName("script")[0];y.src="https://"+atob(c[l]);y.crossOrigin="anonymous";y.onerror=t;y.onload=function(){clearTimeout(b);q[i.slice(0,16)+i.slice(0,16)]||t()};b=setTimeout(t,5E3);e.parentNode.insertBefore(y,e)}};if(!q[i]){try{Object.freeze(q[i]=o)}catch(e){}t()}})();
     </script>
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            gold: '#c9a84c',
-                            goldLight: '#e0c87c',
-                            dark: '#0a0a0a',
-                            surface: '#141414',
-                            muted: '#8a8a8a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    },
-                    animation: {
-                        'beam': 'beam 2s linear infinite',
-                        'color-shift': 'colorShift 4s ease-in-out infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                        'blink': 'blink 1.2s ease-in-out infinite',
-                        'fadeIn': 'fadeIn 0.3s ease-out',
-                        'scaleIn': 'scaleIn 0.3s ease-out'
-                    },
-                    keyframes: {
-                        beam: {
-                            '0%': { backgroundPosition: '200% 0' },
-                            '100%': { backgroundPosition: '-200% 0' }
-                        },
-                        colorShift: {
-                            '0%,100%': { color: '#c9a84c', textShadow: '0 0 15px #c9a84c' },
-                            '25%': { color: '#e0c87c', textShadow: '0 0 25px #e0c87c' },
-                            '50%': { color: '#f5d782', textShadow: '0 0 35px #f5d782' },
-                            '75%': { color: '#d4b86a', textShadow: '0 0 25px #d4b86a' }
-                        },
-                        float: {
-                            '0%,100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-6px)' }
-                        },
-                        blink: {
-                            '0%,100%': { opacity: '1' },
-                            '50%': { opacity: '0.3' }
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.9)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' }
-                        }
-                    }
-                }
-            }
-        }
-        
-        const CONFIG = {
-            UNSPLASH_ACCESS_KEY: 'JdDYqGvG8x9BQtEX8gB1CHOJ7394qW3AlhC1DCtts8M',
-            ADMIN_PASSWORD: 'tochukwu',
-            CEO_PHONE: '2349135357118',
-            SHEETDB_API: 'https://sheetdb.io/api/v1/do2vt832snpzd',
-            IMGBB_API_KEY: 'a408161fc9da7f32e63c081974794882'
-        };
-    </script>
-    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { background:#0a0a0a; color:#fff; font-family:'Inter',sans-serif; overflow-x:hidden; }
+        body { background:#080808; color:#fff; font-family:'Inter',sans-serif; }
         
-        /* Animated Logo */
+        /* ANIMATED LOGO */
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
-            font-size: 2.2rem;
-            letter-spacing: 0.25em;
-            animation: colorShift 4s ease-in-out infinite, float 3s ease-in-out infinite;
-            background: linear-gradient(90deg, #c9a84c, #f5d782, #c9a84c);
-            background-size: 200% auto;
+            font-size: 2rem;
+            letter-spacing: 0.2em;
+            background: linear-gradient(90deg, #c9a84c, #f5d782, #e0c87c, #c9a84c);
+            background-size: 300% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: beam 2s linear infinite, colorShift 4s ease-in-out infinite;
+            animation: logoShine 3s linear infinite;
             display: inline-block;
+        }
+        @keyframes logoShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .logo-border {
             border: 2px solid #c9a84c;
-            box-shadow: 0 0 20px rgba(201,168,76,0.3), inset 0 0 20px rgba(201,168,76,0.05);
-            border-radius: 6px;
-            padding: 0.2rem 1.4rem;
+            box-shadow: 0 0 20px rgba(201,168,76,0.3);
+            padding: 0.3rem 1.2rem;
+            border-radius: 4px;
+            display: inline-block;
         }
-        .logo-sub {
+        .logo-subtitle {
             font-size: 0.55rem;
             letter-spacing: 0.35em;
             color: #c9a84c;
@@ -114,141 +53,130 @@
             font-weight: 700;
         }
         
-        /* Product Grid */
+        /* PRODUCT GRID */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.8rem;
         }
         .product-card {
             cursor: pointer;
-            background: #141414;
-            border: 1px solid #1e1e1e;
-            border-radius: 12px;
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.2s;
         }
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.3);
-        }
+        .product-card:active { transform: scale(0.97); }
         .product-card img {
             width: 100%;
             aspect-ratio: 4/3;
             object-fit: cover;
+            display: block;
         }
         
-        /* Category Cards */
+        /* CATEGORY CARDS */
         .category-card {
             cursor: pointer;
-            background: #141414;
-            border: 1px solid #1e1e1e;
-            border-radius: 14px;
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
             overflow: hidden;
             position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.2s;
         }
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.6);
-        }
+        .category-card:active { transform: scale(0.97); }
         .category-card img {
             width: 100%;
             aspect-ratio: 4/5;
             object-fit: cover;
+            display: block;
         }
-        .blink-badge {
+        .blink-text {
             position: absolute;
-            top: 12px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.85);
             color: #fff;
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            border: 1px solid #c9a84c;
-            animation: blink 1.2s ease-in-out infinite;
+            font-weight: 800;
+            font-size: 0.65rem;
+            border: 2px solid #c9a84c;
+            animation: blink 1s infinite;
+            white-space: nowrap;
+            pointer-events: none;
         }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
         
-        /* Fullscreen Viewer */
-        .viewer-overlay {
+        /* FULL SCREEN VIEWER */
+        #viewer {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98);
+            background: #000;
             z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
-        .viewer-overlay.active { display: flex; }
-        .viewer-overlay img {
-            max-width: 95%;
-            max-height: 80vh;
+        #viewer img {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
-            border-radius: 4px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8);
-            animation: scaleIn 0.3s ease-out;
         }
-        .viewer-tools {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 10000;
-        }
-        .viewer-btn {
-            background: rgba(20,20,20,0.9);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            backdrop-filter: blur(5px);
-        }
-        .viewer-btn:hover { background: rgba(201,168,76,0.2); border-color: #c9a84c; }
         .viewer-close {
             position: fixed;
-            top: 16px;
-            right: 20px;
-            background: rgba(255,60,60,0.7);
-            border: none;
+            top: 15px; right: 15px;
+            background: rgba(255,0,0,0.8);
             color: #fff;
+            border: none;
+            font-size: 22px;
             width: 40px; height: 40px;
             border-radius: 50%;
-            font-size: 1.2rem;
             cursor: pointer;
-            z-index: 10001;
+            z-index: 10000;
         }
         .viewer-nav {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            border: none;
+            background: rgba(0,0,0,0.6);
             color: #fff;
+            border: none;
+            font-size: 24px;
             width: 40px; height: 40px;
             border-radius: 50%;
-            font-size: 1.2rem;
             cursor: pointer;
-            z-index: 10001;
+            z-index: 10000;
         }
-        .prev { left: 16px; } .next { right: 16px; }
+        .viewer-prev { left: 10px; }
+        .viewer-next { right: 10px; }
+        .viewer-bottom {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10000;
+        }
+        .viewer-bottom button, .viewer-bottom a {
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 700;
+            border: none;
+            text-decoration: none;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        .btn-save { background: #c9a84c; color: #000; }
+        .btn-wa { background: #25D366; color: #fff; }
         
-        /* Ad Overlay (before download) */
-        .ad-overlay {
+        /* AD OVERLAY */
+        #ad-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0;
@@ -259,32 +187,18 @@
             align-items: center;
             flex-direction: column;
         }
-        .ad-overlay.active { display: flex; }
-        .ad-overlay-box {
-            background: #141414;
-            border: 1px solid #c9a84c;
-            border-radius: 16px;
-            padding: 24px;
+        .ad-box-inner {
+            background: #111;
+            border: 2px solid #c9a84c;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            max-width: 360px;
+            max-width: 350px;
             width: 90%;
         }
-        .ad-skip-btn {
-            margin-top: 12px;
-            background: #c9a84c;
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-        .ad-skip-btn.active { opacity: 1; cursor: pointer; }
         
-        /* Admin Panel */
-        .admin-modal {
+        /* ADMIN PANEL */
+        .modal {
             display: none;
             position: fixed;
             top: 0; left: 0;
@@ -294,491 +208,413 @@
             justify-content: center;
             align-items: center;
         }
-        .admin-modal.active { display: flex; }
-        .admin-content {
-            background: #141414;
-            border: 1px solid #222;
-            border-radius: 16px;
-            padding: 24px;
-            max-width: 600px;
+        .modal.active { display: flex; }
+        .modal-content {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
             width: 92%;
             max-height: 85vh;
             overflow-y: auto;
         }
         
-        /* Upload preview */
-        .upload-preview img {
-            width: 70px; height: 70px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin: 4px;
+        .btn-gold {
+            background: #c9a84c;
+            color: #000;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-green {
+            background: #27ae60;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
         
-        /* Manage images grid */
-        .manage-grid img {
-            width: 80px; height: 80px;
-            object-fit: cover;
-            border-radius: 6px;
-            cursor: pointer;
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920');
+            background-size: cover;
+            background-position: center;
         }
-        .delete-icon {
-            position: absolute;
-            top: -5px; right: -5px;
-            background: red;
-            color: #fff;
-            border-radius: 50%;
-            width: 20px; height: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        
+        .ad-banner {
+            text-align: center;
+            margin: 12px auto;
+            max-width: 350px;
+            padding: 6px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            min-height: 60px;
         }
     </style>
 </head>
 <body>
 
-<!-- Top Ad -->
-<div style="text-align:center; padding:4px; background:#000;">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
-<!-- Header -->
-<header style="background:rgba(10,10,10,0.95); backdrop-filter:blur(10px); border-bottom:1px solid #1e1e1e; position:sticky; top:0; z-index:100; padding:0 1rem;">
-    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:70px; flex-wrap:wrap; gap:8px;">
-        <a href="#" onclick="showHome();return false;" style="text-decoration:none; display:flex; flex-direction:column; align-items:center;">
-            <div class="logo-border">
-                <span class="logo-text">TCWF</span>
-            </div>
-            <span class="logo-sub">CLASSIC WORLD FURNITURE</span>
-        </a>
-        <nav style="display:flex; gap:10px; font-size:0.75rem; font-weight:500; flex-wrap:wrap;">
-            <a href="#" onclick="showHome();return false;" style="color:#c9a84c;">Home</a>
-            <a href="#" onclick="showCollection('bedroom');return false;" style="color:#aaa;">Beds</a>
-            <a href="#" onclick="showCollection('livingroom');return false;" style="color:#aaa;">Sofas</a>
-            <a href="#" onclick="showCollection('dining');return false;" style="color:#aaa;">Dining</a>
-            <a href="#" onclick="showCollection('tables');return false;" style="color:#aaa;">Tables</a>
-            <a href="#" onclick="showCollection('tvstands');return false;" style="color:#aaa;">TV Stands</a>
-        </nav>
-        <button onclick="openAdmin()" style="background:transparent; border:1px solid #c9a84c; color:#c9a84c; padding:5px 12px; border-radius:20px; font-size:0.7rem; cursor:pointer;">🔐 Admin</button>
+    <!-- TOP AD -->
+    <div class="ad-banner">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-</header>
 
-<!-- Admin Login Modal -->
-<div id="login-modal" class="admin-modal">
-    <div class="admin-content">
-        <h3 style="color:#c9a84c; margin-bottom:12px;">Admin Login</h3>
-        <input type="password" id="admin-pass" placeholder="Password" style="width:100%; padding:12px; background:#000; border:1px solid #333; color:#fff; border-radius:8px; margin-bottom:10px;">
-        <button onclick="adminLogin()" style="background:#c9a84c; color:#000; font-weight:600; padding:12px; border:none; border-radius:8px; width:100%;">Login</button>
-        <p id="login-error" style="color:red; font-size:0.8rem; margin-top:8px; display:none;">Wrong password!</p>
-        <button onclick="document.getElementById('login-modal').classList.remove('active')" style="width:100%; color:#aaa; background:none; border:none; margin-top:8px;">Cancel</button>
-    </div>
-</div>
-
-<!-- Admin Panel -->
-<div id="admin-panel" class="admin-modal">
-    <div class="admin-content">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-            <h3 style="color:#c9a84c;">Admin Panel</h3>
-            <button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff; background:none; border:none; font-size:1.5rem;">&times;</button>
+    <!-- HEADER -->
+    <header style="background:#080808;border-bottom:1px solid #1a1a1a;position:sticky;top:0;z-index:50;padding:0 10px;">
+        <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:65px;flex-wrap:wrap;gap:6px;">
+            <a href="#" onclick="showHome();return false;" style="text-decoration:none;text-align:center;">
+                <div class="logo-border"><span class="logo-text">TCWF</span></div>
+                <div class="logo-subtitle">CLASSIC WORLD FURNITURE</div>
+            </a>
+            <nav style="display:flex;gap:8px;font-size:0.7rem;font-weight:500;flex-wrap:wrap;">
+                <a href="#" onclick="showHome();return false;" style="color:#c9a84c;">Home</a>
+                <a href="#" onclick="showCollection('bedroom');return false;" style="color:#aaa;">Beds</a>
+                <a href="#" onclick="showCollection('livingroom');return false;" style="color:#aaa;">Sofas</a>
+                <a href="#" onclick="showCollection('dining');return false;" style="color:#aaa;">Dining</a>
+                <a href="#" onclick="showCollection('tables');return false;" style="color:#aaa;">Tables</a>
+                <a href="#" onclick="showCollection('tvstands');return false;" style="color:#aaa;">TV Stands</a>
+            </nav>
+            <button onclick="openLogin()" style="background:transparent;border:1px solid #c9a84c;color:#c9a84c;padding:5px 10px;border-radius:5px;font-size:0.65rem;cursor:pointer;">🔐 Admin</button>
         </div>
-        
-        <!-- Upload Section -->
-        <div style="margin-bottom:16px;">
-            <select id="upload-cat" style="width:100%; padding:10px; background:#000; border:1px solid #333; color:#fff; border-radius:6px; margin-bottom:8px;">
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h3 style="color:#c9a84c;margin-bottom:10px;">Admin Login</h3>
+            <input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;">
+            <button onclick="adminLogin()" class="btn-gold">Login</button>
+            <p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong password!</p>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" class="modal">
+        <div class="modal-content">
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+                <h3 style="color:#c9a84c;">Admin Panel</h3>
+                <button onclick="closeAdmin()" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button>
+            </div>
+            
+            <!-- Upload -->
+            <select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;">
                 <option value="bedroom">🛏️ Bedroom</option>
                 <option value="livingroom">🛋️ Living Room</option>
                 <option value="dining">🍽️ Dining</option>
                 <option value="tables">📐 Tables</option>
                 <option value="tvstands">📺 TV Stands</option>
             </select>
-            <div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c; padding:20px; text-align:center; border-radius:10px; cursor:pointer; margin-bottom:8px;">
-                <p style="color:#fff;">📁 Click to select images</p>
-                <input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewUpload()">
+            <div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;">
+                <p style="color:#fff;">📁 Tap to select images</p>
+                <input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()">
             </div>
-            <div id="upload-preview" class="upload-preview" style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px;"></div>
-            <button onclick="uploadImages()" style="background:#c9a84c; color:#000; font-weight:600; padding:10px; border:none; border-radius:8px; width:100%;">📤 Upload Images</button>
+            <div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div>
+            <button onclick="uploadAll()" class="btn-gold" style="margin-bottom:12px;">📤 Upload</button>
+            
+            <!-- Manage -->
+            <div style="border-top:1px solid #222;padding-top:10px;">
+                <p style="color:#fff;margin-bottom:6px;">📋 Manage Images</p>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;" id="manage-cats"></div>
+                <div id="manage-grid" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+            </div>
         </div>
+    </div>
+
+    <!-- FULL SCREEN VIEWER -->
+    <div id="viewer">
+        <button class="viewer-close" onclick="closeViewer()">✕</button>
+        <button class="viewer-nav viewer-prev" onclick="navViewer(-1)">◀</button>
+        <button class="viewer-nav viewer-next" onclick="navViewer(1)">▶</button>
+        <img id="viewer-img" src="" alt="Furniture">
+        <div class="viewer-bottom">
+            <button class="btn-save" onclick="startDownload()">💾 Download</button>
+            <a class="btn-wa" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- AD OVERLAY FOR DOWNLOAD -->
+    <div id="ad-overlay">
+        <div class="ad-box-inner">
+            <p style="color:#c9a84c;font-weight:700;">📢 Advertisement</p>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <p id="ad-timer-text" style="color:#aaa;font-size:0.8rem;margin-top:8px;">Please wait 5 seconds...</p>
+            <button id="ad-skip-btn" onclick="finishDownload()" disabled style="margin-top:10px;background:#c9a84c;color:#000;border:none;padding:10px 20px;border-radius:25px;font-weight:700;opacity:0.6;">Please wait...</button>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="home-section" class="hero-bg" style="min-height:45vh;display:flex;align-items:center;padding:25px 12px;">
+        <div>
+            <p style="color:#c9a84c;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Premium Furniture</p>
+            <h1 style="font-family:'Playfair Display',serif;font-size:2rem;line-height:1.1;margin:5px 0;">Crafted for <span style="background:linear-gradient(135deg,#d4b86a,#c9a84c,#a88a2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Comfort.</span></h1>
+            <div style="display:flex;max-width:400px;margin-top:12px;">
+                <input type="text" id="search-input" placeholder="Search furniture..." style="flex:1;padding:10px;background:#111;border:2px solid #333;color:#fff;border-radius:25px 0 0 25px;">
+                <button onclick="searchNow()" style="padding:10px 16px;background:#c9a84c;color:#000;border:none;border-radius:0 25px 25px 0;font-weight:700;">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="home-cats" style="max-width:1100px;margin:0 auto;padding:25px 12px;">
+        <h2 style="text-align:center;font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:20px;">Shop By Category</h2>
+        <div id="cats-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;"></div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div></div>
+    <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div></div>
+    <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div></div>
+    <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div></div>
+    <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2>📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div></div>
+
+    <!-- CONTACT -->
+    <section style="max-width:1100px;margin:15px auto;padding:12px;">
+        <div style="background:#111;border-radius:10px;padding:15px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <div><p>Contact Engineer</p><p style="font-weight:bold;">Tochukwu</p><p style="color:#c9a84c;">09135357118</p></div>
+            <a href="https://wa.me/2349135357118" target="_blank" style="background:#25D366;color:#fff;padding:8px 15px;border-radius:6px;text-decoration:none;font-weight:600;">💬 WhatsApp</a>
+        </div>
+    </section>
+
+    <footer style="text-align:center;padding:15px;color:#555;">© 2026 TCWF</footer>
+
+    <script>
+        const CONFIG = {
+            UNSPLASH_KEY: 'JdDYqGvG8x9BQtEX8gB1CHOJ7394qW3AlhC1DCtts8M',
+            ADMIN_PASS: 'tochukwu',
+            SHEETDB: 'https://sheetdb.io/api/v1/do2vt832snpzd',
+            IMGBB_KEY: 'a408161fc9da7f32e63c081974794882'
+        };
         
-        <!-- Manage Images -->
-        <div style="border-top:1px solid #222; padding-top:16px;">
-            <h4 style="color:#fff; margin-bottom:8px;">📋 Manage Images</h4>
-            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;" id="manage-cats"></div>
-            <div id="manage-images" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
-        </div>
-    </div>
-</div>
-
-<!-- Fullscreen Image Viewer -->
-<div id="image-viewer" class="viewer-overlay">
-    <button class="viewer-close" onclick="closeViewer()">✕</button>
-    <button class="viewer-nav prev" onclick="navViewer(-1)">◀</button>
-    <button class="viewer-nav next" onclick="navViewer(1)">▶</button>
-    <img id="viewer-img" src="" alt="Furniture">
-    <div class="viewer-tools">
-        <button class="viewer-btn" onclick="initiateDownload()">💾 Download</button>
-        <a class="viewer-btn" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank" style="text-decoration:none;">💬 WhatsApp</a>
-    </div>
-</div>
-
-<!-- Ad Overlay (before download) -->
-<div id="ad-overlay" class="ad-overlay">
-    <div class="ad-overlay-box">
-        <p style="color:#c9a84c; font-weight:700; margin-bottom:8px;">📢 Advertisement</p>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <p style="color:#aaa; font-size:0.8rem; margin-top:8px;" id="ad-timer">Please wait 5 seconds...</p>
-        <button id="ad-skip" class="ad-skip-btn" disabled onclick="proceedDownload()">Please wait...</button>
-    </div>
-</div>
-
-<!-- Hero Section -->
-<section id="home-section" style="min-height:45vh; display:flex; align-items:center; padding:2rem 1rem; background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920') center/cover;">
-    <div style="max-width:500px;">
-        <p style="color:#c9a84c; text-transform:uppercase; letter-spacing:0.2em; font-size:0.7rem;">Premium Furniture</p>
-        <h1 style="font-family:'Playfair Display',serif; font-size:2.5rem; line-height:1.1; margin:8px 0;">Crafted for <span style="background:linear-gradient(135deg,#d4b86a,#c9a84c,#a88a2e); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Comfort.</span></h1>
-        <p style="color:#aaa; margin-bottom:16px;">Quality furniture designs for your home.</p>
-        <div style="display:flex; max-width:400px;">
-            <input type="text" id="search-input" placeholder="Search furniture..." onkeypress="if(event.key==='Enter')searchNow()" style="flex:1; padding:12px; background:#111; border:2px solid #333; color:#fff; border-radius:25px 0 0 25px;">
-            <button onclick="searchNow()" style="padding:12px 18px; background:#c9a84c; color:#000; border:none; border-radius:0 25px 25px 0; font-weight:700;">🔍</button>
-        </div>
-    </div>
-</section>
-
-<!-- Categories -->
-<section id="home-cats" style="max-width:1200px; margin:0 auto; padding:2rem 1rem;">
-    <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:2rem;">Shop By Category</h2>
-    <div id="cats-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:1rem;"></div>
-</section>
-
-<!-- Collection Sections (hidden by default) -->
-<div id="bedroom-collection" class="collection-section" style="max-width:1200px; margin:0 auto; padding:1rem;"><h2 style="font-family:'Playfair Display',serif;">🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="bedroom-products"></div><button class="load-more" onclick="loadMore('bedroom')" style="margin:1rem auto; display:block; background:#c9a84c; color:#000; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Load More</button></div>
-<div id="livingroom-collection" class="collection-section" style="max-width:1200px; margin:0 auto; padding:1rem;"><h2 style="font-family:'Playfair Display',serif;">🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="livingroom-products"></div><button class="load-more" onclick="loadMore('livingroom')" style="margin:1rem auto; display:block; background:#c9a84c; color:#000; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Load More</button></div>
-<div id="dining-collection" class="collection-section" style="max-width:1200px; margin:0 auto; padding:1rem;"><h2 style="font-family:'Playfair Display',serif;">🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="dining-products"></div><button class="load-more" onclick="loadMore('dining')" style="margin:1rem auto; display:block; background:#c9a84c; color:#000; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Load More</button></div>
-<div id="tables-collection" class="collection-section" style="max-width:1200px; margin:0 auto; padding:1rem;"><h2 style="font-family:'Playfair Display',serif;">📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="tables-products"></div><button class="load-more" onclick="loadMore('tables')" style="margin:1rem auto; display:block; background:#c9a84c; color:#000; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Load More</button></div>
-<div id="tvstands-collection" class="collection-section" style="max-width:1200px; margin:0 auto; padding:1rem;"><h2 style="font-family:'Playfair Display',serif;">📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="tvstands-products"></div><button class="load-more" onclick="loadMore('tvstands')" style="margin:1rem auto; display:block; background:#c9a84c; color:#000; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Load More</button></div>
-
-<!-- Contact -->
-<section style="max-width:1200px; margin:1rem auto; padding:1rem;">
-    <div style="background:#141414; border-radius:12px; padding:20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-        <div><p style="color:#aaa; font-size:0.7rem;">Contact Engineer</p><p style="font-size:1.2rem; font-weight:bold;">Tochukwu</p><p style="color:#c9a84c;">09135357118</p></div>
-        <a href="https://wa.me/2349135357118" target="_blank" style="background:#25D366; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:600;">💬 WhatsApp</a>
-    </div>
-</section>
-
-<footer style="text-align:center; padding:20px; color:#555; font-size:0.7rem;">© 2026 TCWF · Classic World Furniture</footer>
-
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/2349135357118" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; z-index:99; text-decoration:none; box-shadow:0 6px 20px rgba(37,211,102,0.3);">💬</a>
-
-<script>
-    // Data & State
-    let allProducts = [];
-    let selectedFiles = [];
-    let viewerImages = [];
-    let viewerIndex = 0;
-    let downloadUrl = '';
-    let adTimer = null;
-    
-    const CATS = ['bedroom','livingroom','dining','tables','tvstands'];
-    const CAT_LABELS = { bedroom:'Bed Designs', livingroom:'Couch Designs', dining:'Dining Designs', tables:'Table Designs', tvstands:'TV Stand Designs' };
-    const CAT_QUERIES = { bedroom:'bed design', livingroom:'couch design', dining:'dining table design', tables:'table design', tvstands:'tv stand design' };
-    const PLACEHOLDERS = {
-        bedroom: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',
-        livingroom: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400',
-        dining: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400',
-        tables: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400',
-        tvstands: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400'
-    };
-    
-    // ---------- SheetDB ----------
-    async function loadSheet() {
-        try {
-            const r = await fetch(CONFIG.SHEETDB_API);
-            allProducts = await r.json();
-            allProducts = allProducts.map(p => ({ ...p, category: (p.category||p['category ']||'').trim() }));
-        } catch(e) { allProducts = []; }
-    }
-    
-    async function saveToSheet(entry) {
-        await fetch(CONFIG.SHEETDB_API, {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(entry)
-        });
-    }
-    
-    async function deleteFromSheet(id) {
-        await fetch(`${CONFIG.SHEETDB_API}/id/${id}`, { method: 'DELETE' });
-    }
-    
-    // ---------- Unsplash ----------
-    async function fetchUnsplash(query, page=1, perPage=20) {
-        try {
-            const r = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=${perPage}&page=${page}&client_id=${CONFIG.UNSPLASH_ACCESS_KEY}`);
-            const d = await r.json();
-            return d.results.map(img => ({ id: img.id, url: img.urls.regular, name: img.alt_description || query }));
-        } catch(e) { return []; }
-    }
-    
-    // ---------- Render Products ----------
-    function renderProducts(containerId, products) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-        if (products.length === 0) {
-            container.innerHTML = '<p style="color:#aaa; text-align:center; padding:2rem;">No images found.</p>';
-            return;
+        let allProducts = [];
+        let selectedFiles = [];
+        let viewerUrls = [];
+        let viewerIdx = 0;
+        let downloadUrl = '';
+        let adTimer = null;
+        
+        const CATS = ['bedroom','livingroom','dining','tables','tvstands'];
+        const CAT_LABELS = { bedroom:'Bed Designs', livingroom:'Couch Designs', dining:'Dining Designs', tables:'Table Designs', tvstands:'TV Stand Designs' };
+        const CAT_QUERIES = { bedroom:'bed design', livingroom:'couch design', dining:'dining table', tables:'table design', tvstands:'tv stand' };
+        const PL = { bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400', livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400', dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400', tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400', tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400' };
+        
+        // LOAD DATA
+        async function loadData() {
+            try { const r = await fetch(CONFIG.SHEETDB); allProducts = await r.json(); allProducts = allProducts.map(p => ({...p, category: (p.category||'').trim()})); } catch(e) { allProducts = []; }
         }
-        const urls = products.map(p => p.url);
-        container.innerHTML = products.map((p, i) => `
-            <div class="product-card" onclick="openViewer(${JSON.stringify(urls)}, ${i})">
-                <img src="${p.url}" alt="${p.name||'Furniture'}" loading="lazy" onerror="this.src='${PLACEHOLDERS.bedroom}';">
-                <div style="padding:8px;"><p style="font-size:0.7rem; color:#ccc;">${(p.name||'Furniture').substring(0,30)}</p></div>
-            </div>
-        `).join('');
-    }
-    
-    // ---------- Viewer ----------
-    function openViewer(urls, index) {
-        viewerImages = urls;
-        viewerIndex = index;
-        document.getElementById('viewer-img').src = urls[index];
-        document.getElementById('image-viewer').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeViewer() {
-        document.getElementById('image-viewer').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    function navViewer(dir) {
-        viewerIndex = (viewerIndex + dir + viewerImages.length) % viewerImages.length;
-        document.getElementById('viewer-img').src = viewerImages[viewerIndex];
-    }
-    
-    // ---------- Download with Ad ----------
-    function initiateDownload() {
-        downloadUrl = viewerImages[viewerIndex];
-        // Show ad overlay
-        document.getElementById('ad-overlay').classList.add('active');
-        let seconds = 5;
-        const timerEl = document.getElementById('ad-timer');
-        const skipBtn = document.getElementById('ad-skip');
-        skipBtn.disabled = true;
-        skipBtn.classList.remove('active');
-        skipBtn.textContent = 'Please wait...';
         
-        if (adTimer) clearInterval(adTimer);
-        adTimer = setInterval(() => {
-            seconds--;
-            timerEl.textContent = `Please wait ${seconds} seconds...`;
-            if (seconds <= 0) {
-                clearInterval(adTimer);
-                timerEl.textContent = 'You can now continue';
-                skipBtn.disabled = false;
-                skipBtn.classList.add('active');
-                skipBtn.textContent = '⬇️ Download Image';
+        // RENDER CATEGORIES
+        function renderCats() {
+            document.getElementById('cats-grid').innerHTML = CATS.map(cat => `
+                <div class="category-card" onclick="showCollection('${cat}')">
+                    <div style="position:relative;"><img src="${PL[cat]}"><div class="blink-text">✨ VIEW ✨</div></div>
+                    <div style="padding:8px;text-align:center;"><h3 style="font-family:'Playfair Display',serif;font-weight:600;">${CAT_LABELS[cat]}</h3></div>
+                </div>
+            `).join('');
+        }
+        
+        // SHOW COLLECTION
+        async function showCollection(cat) {
+            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
+            document.getElementById('home-section').style.display='none';
+            document.getElementById('home-cats').style.display='none';
+            const sec = document.getElementById(cat+'-collection');
+            if (sec) {
+                sec.style.display = 'block';
+                await loadData();
+                const sheet = allProducts.filter(p => p.category === cat);
+                const unsplash = await fetchUnsplash(CAT_QUERIES[cat]);
+                const products = [...sheet, ...unsplash];
+                renderProducts(cat+'-products', products);
+                window.scrollTo(0,0);
             }
-        }, 1000);
-    }
-    
-    function proceedDownload() {
-        document.getElementById('ad-overlay').classList.remove('active');
-        if (adTimer) clearInterval(adTimer);
-        // Trigger download
-        const a = document.createElement('a');
-        a.href = downloadUrl;
-        a.download = 'TCWF-' + Date.now() + '.jpg';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
-    
-    // ---------- Categories Page ----------
-    async function showCollection(cat) {
-        document.querySelectorAll('.collection-section').forEach(el => el.style.display = 'none');
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('home-cats').style.display = 'none';
-        const sec = document.getElementById(cat+'-collection');
-        if (sec) {
-            sec.style.display = 'block';
-            await loadSheet();
-            const unsplash = await fetchUnsplash(CAT_QUERIES[cat], 1, 24);
-            const sheetItems = allProducts.filter(p => p.category === cat);
-            renderProducts(cat+'-products', [...sheetItems, ...unsplash]);
-            window.scrollTo(0,0);
         }
-    }
-    
-    // ---------- Home ----------
-    function showHome() {
-        document.querySelectorAll('.collection-section').forEach(el => el.style.display = 'none');
-        document.getElementById('home-section').style.display = 'flex';
-        document.getElementById('home-cats').style.display = 'block';
-        renderCategories();
-        window.scrollTo(0,0);
-    }
-    
-    function renderCategories() {
-        const grid = document.getElementById('cats-grid');
-        grid.innerHTML = CATS.map(cat => `
-            <div class="category-card" onclick="showCollection('${cat}')">
-                <div style="position:relative;">
-                    <img src="${PLACEHOLDERS[cat]}" alt="${CAT_LABELS[cat]}">
-                    <div class="blink-badge">✨ VIEW ✨</div>
-                </div>
-                <div style="padding:10px; text-align:center;">
-                    <h3 style="font-family:'Playfair Display',serif; font-weight:600;">${CAT_LABELS[cat]}</h3>
-                </div>
-            </div>
-        `).join('');
-    }
-    
-    // ---------- Admin ----------
-    function openAdmin() {
-        document.getElementById('login-modal').classList.add('active');
-        document.getElementById('login-error').style.display = 'none';
-    }
-    
-    function adminLogin() {
-        if (document.getElementById('admin-pass').value === CONFIG.ADMIN_PASSWORD) {
-            document.getElementById('login-modal').classList.remove('active');
-            document.getElementById('admin-panel').classList.add('active');
-            buildManageCategories();
-        } else {
-            document.getElementById('login-error').style.display = 'block';
-        }
-    }
-    
-    function previewUpload() {
-        selectedFiles = Array.from(document.getElementById('file-input').files);
-        const preview = document.getElementById('upload-preview');
-        preview.innerHTML = selectedFiles.map(f => `<img src="${URL.createObjectURL(f)}">`).join('');
-    }
-    
-    async function uploadImages() {
-        if (selectedFiles.length === 0) { alert('Select images first'); return; }
-        const cat = document.getElementById('upload-cat').value;
-        for (const file of selectedFiles) {
-            const fd = new FormData(); fd.append('image', file);
+        
+        async function fetchUnsplash(query) {
             try {
-                const r = await fetch(`https://api.imgbb.com/1/upload?key=${CONFIG.IMGBB_API_KEY}`, { method:'POST', body:fd });
+                const r = await fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=20&client_id=${CONFIG.UNSPLASH_KEY}`);
+                const d = await r.json();
+                return d.results.map(i => ({ id:i.id, url:i.urls.regular, name:i.alt_description||query }));
+            } catch(e) { return []; }
+        }
+        
+        function renderProducts(containerId, products) {
+            const c = document.getElementById(containerId);
+            if (!c) return;
+            const urls = products.map(p => p.url);
+            c.innerHTML = products.map((p,i) => `
+                <div class="product-card" onclick="openViewer(${JSON.stringify(urls)},${i})">
+                    <img src="${p.url}" loading="lazy">
+                    <div style="padding:6px;"><p style="font-size:0.65rem;color:#ccc;">${(p.name||'Furniture').substring(0,30)}</p></div>
+                </div>
+            `).join('');
+        }
+        
+        // VIEWER
+        function openViewer(urls, idx) {
+            viewerUrls = urls; viewerIdx = idx;
+            document.getElementById('viewer-img').src = urls[idx];
+            document.getElementById('viewer').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeViewer() {
+            document.getElementById('viewer').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function navViewer(d) {
+            viewerIdx = (viewerIdx + d + viewerUrls.length) % viewerUrls.length;
+            document.getElementById('viewer-img').src = viewerUrls[viewerIdx];
+        }
+        
+        // DOWNLOAD WITH AD
+        function startDownload() {
+            downloadUrl = viewerUrls[viewerIdx];
+            document.getElementById('ad-overlay').style.display = 'flex';
+            let sec = 5;
+            document.getElementById('ad-timer-text').textContent = 'Please wait ' + sec + ' seconds...';
+            document.getElementById('ad-skip-btn').disabled = true;
+            document.getElementById('ad-skip-btn').style.opacity = '0.6';
+            if (adTimer) clearInterval(adTimer);
+            adTimer = setInterval(() => {
+                sec--;
+                document.getElementById('ad-timer-text').textContent = 'Please wait ' + sec + ' seconds...';
+                if (sec <= 0) {
+                    clearInterval(adTimer);
+                    document.getElementById('ad-timer-text').textContent = 'You can now download';
+                    document.getElementById('ad-skip-btn').disabled = false;
+                    document.getElementById('ad-skip-btn').style.opacity = '1';
+                    document.getElementById('ad-skip-btn').textContent = '⬇️ Download Now';
+                }
+            }, 1000);
+        }
+        function finishDownload() {
+            document.getElementById('ad-overlay').style.display = 'none';
+            if (adTimer) clearInterval(adTimer);
+            const a = document.createElement('a');
+            a.href = downloadUrl;
+            a.download = 'TCWF-' + Date.now() + '.jpg';
+            a.click();
+        }
+        
+        // ADMIN
+        function openLogin() { document.getElementById('login-modal').classList.add('active'); }
+        function adminLogin() {
+            if (document.getElementById('admin-pass').value === CONFIG.ADMIN_PASS) {
+                document.getElementById('login-modal').classList.remove('active');
+                document.getElementById('admin-panel').classList.add('active');
+                buildManageCats();
+            } else {
+                document.getElementById('login-err').style.display = 'block';
+            }
+        }
+        function closeAdmin() { document.getElementById('admin-panel').classList.remove('active'); }
+        
+        function previewFiles() {
+            selectedFiles = Array.from(document.getElementById('file-input').files);
+            document.getElementById('preview-box').innerHTML = selectedFiles.map(f => `<img src="${URL.createObjectURL(f)}" style="width:60px;height:60px;object-fit:cover;border-radius:5px;">`).join('');
+        }
+        
+        async function uploadAll() {
+            if (!selectedFiles.length) { alert('Select images'); return; }
+            const cat = document.getElementById('upload-cat').value;
+            for (const f of selectedFiles) {
+                const fd = new FormData(); fd.append('image', f);
+                const r = await fetch(`https://api.imgbb.com/1/upload?key=${CONFIG.IMGBB_KEY}`, { method:'POST', body:fd });
                 const d = await r.json();
                 if (d.success) {
-                    await saveToSheet({
-                        id: Date.now().toString() + Math.random().toString(36).substr(2,5),
-                        category: cat,
-                        url: d.data.url,
-                        name: file.name.replace(/\.[^/.]+$/, '')
-                    });
+                    await fetch(CONFIG.SHEETDB, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ id:Date.now().toString(), category:cat, url:d.data.url, name:f.name }) });
                 }
-            } catch(e) { console.error(e); }
+            }
+            await loadData();
+            selectedFiles = [];
+            document.getElementById('preview-box').innerHTML = '';
+            document.getElementById('file-input').value = '';
+            alert('✅ Uploaded!');
+            showCollection(cat);
         }
-        await loadSheet();
-        selectedFiles = [];
-        document.getElementById('upload-preview').innerHTML = '';
-        document.getElementById('file-input').value = '';
-        alert('✅ Images uploaded!');
-        showCollection(cat);
-    }
-    
-    // Manage images (delete)
-    function buildManageCategories() {
-        const container = document.getElementById('manage-cats');
-        container.innerHTML = CATS.map(cat => `<button onclick="showManageImages('${cat}')" style="background:#222; border:none; color:#fff; padding:6px 12px; border-radius:20px; cursor:pointer; font-size:0.8rem;">${CAT_LABELS[cat]}</button>`).join('');
-    }
-    
-    async function showManageImages(cat) {
-        await loadSheet();
-        const items = allProducts.filter(p => p.category === cat);
-        const container = document.getElementById('manage-images');
-        if (items.length === 0) {
-            container.innerHTML = '<p style="color:#aaa;">No images in this category.</p>';
-            return;
-        }
-        container.innerHTML = items.map(item => `
-            <div style="position:relative; display:inline-block; margin:4px;">
-                <img src="${item.url}" style="width:80px; height:80px; object-fit:cover; border-radius:6px;">
-                <span class="delete-icon" onclick="deleteImage('${item.id}')">×</span>
-            </div>
-        `).join('');
-    }
-    
-    async function deleteImage(id) {
-        if (!confirm('Delete this image?')) return;
-        await deleteFromSheet(id);
-        await loadSheet();
-        // Refresh manage view if open
-        const activeCat = document.getElementById('manage-cats').querySelector('button[style*="background:#c9a84c"]');
-        if (activeCat) showManageImages(activeCat.textContent.toLowerCase().replace(' ',''));
-        else showHome();
-    }
-    
-    // Search
-    async function searchNow() {
-        const query = document.getElementById('search-input').value.trim();
-        if (!query) return;
-        document.querySelectorAll('.collection-section').forEach(el => el.style.display = 'none');
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('home-cats').style.display = 'none';
-        // Simple search display in a temporary section
-        const tempSection = document.createElement('div');
-        tempSection.className = 'collection-section';
-        tempSection.style.display = 'block';
-        tempSection.innerHTML = `<h2 style="font-family:'Playfair Display',serif;">🔍 Results for "${query}"</h2><button onclick="showHome()" style="color:#c9a84c; background:none; border:none; margin-bottom:1rem;">← Back</button><div class="product-grid" id="search-products"></div>`;
-        document.body.appendChild(tempSection);
-        window.scrollTo(0,0);
         
-        const unsplash = await fetchUnsplash(query + ' furniture', 1, 30);
-        await loadSheet();
-        const sheetResults = allProducts.filter(p => p.name && p.name.toLowerCase().includes(query.toLowerCase()));
-        const combined = [...sheetResults, ...unsplash];
-        renderProducts('search-products', combined);
-    }
-    
-    // Keyboard controls for viewer
-    document.addEventListener('keydown', e => {
-        if (!document.getElementById('image-viewer').classList.contains('active')) return;
-        if (e.key === 'Escape') closeViewer();
-        if (e.key === 'ArrowLeft') navViewer(-1);
-        if (e.key === 'ArrowRight') navViewer(1);
-    });
-    
-    // Init
-    document.addEventListener('DOMContentLoaded', () => {
-        renderCategories();
-        showHome();
-    });
-    
-    // Expose
-    window.showHome = showHome;
-    window.showCollection = showCollection;
-    window.searchNow = searchNow;
-    window.openAdmin = openAdmin;
-    window.adminLogin = adminLogin;
-    window.previewUpload = previewUpload;
-    window.uploadImages = uploadImages;
-    window.showManageImages = showManageImages;
-    window.deleteImage = deleteImage;
-    window.openViewer = openViewer;
-    window.closeViewer = closeViewer;
-    window.navViewer = navViewer;
-    window.initiateDownload = initiateDownload;
-    window.proceedDownload = proceedDownload;
-    window.loadMore = async (cat) => {
-        const unsplash = await fetchUnsplash(CAT_QUERIES[cat], 2, 20);
-        const container = document.getElementById(cat+'-products');
-        const existingUrls = Array.from(container.querySelectorAll('img')).map(img => img.src);
-        const newUrls = [...existingUrls, ...unsplash.map(x => x.url)];
-        container.innerHTML += unsplash.map((p, i) => `
-            <div class="product-card" onclick="openViewer(${JSON.stringify(newUrls)}, ${existingUrls.length + i})">
-                <img src="${p.url}" loading="lazy">
-                <div style="padding:8px;"><p style="font-size:0.7rem; color:#ccc;">${p.name.substring(0,30)}</p></div>
-            </div>
-        `).join('');
-    };
-</script>
+        // MANAGE
+        function buildManageCats() {
+            document.getElementById('manage-cats').innerHTML = CATS.map(cat => `<button onclick="showManage('${cat}')" style="background:#222;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer;">${CAT_LABELS[cat]}</button>`).join('');
+        }
+        async function showManage(cat) {
+            await loadData();
+            const items = allProducts.filter(p => p.category === cat);
+            document.getElementById('manage-grid').innerHTML = items.length === 0 ? '<p style="color:#aaa;">No images</p>' : items.map(p => `
+                <div style="position:relative;">
+                    <img src="${p.url}" style="width:70px;height:70px;object-fit:cover;border-radius:5px;">
+                    <span onclick="deleteImg('${p.id}')" style="position:absolute;top:-5px;right:-5px;background:red;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer;">×</span>
+                </div>
+            `).join('');
+        }
+        async function deleteImg(id) {
+            if (!confirm('Delete?')) return;
+            await fetch(`${CONFIG.SHEETDB}/id/${id}`, { method:'DELETE' });
+            await loadData();
+            alert('Deleted');
+            showHome();
+        }
+        
+        // HOME
+        function showHome() {
+            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
+            document.getElementById('home-section').style.display='flex';
+            document.getElementById('home-cats').style.display='block';
+            renderCats();
+            window.scrollTo(0,0);
+        }
+        
+        // SEARCH
+        async function searchNow() {
+            const q = document.getElementById('search-input').value.trim();
+            if (!q) return;
+            document.querySelectorAll('.collection-section').forEach(el => el.style.display='none');
+            document.getElementById('home-section').style.display='none';
+            document.getElementById('home-cats').style.display='none';
+            const temp = document.createElement('div');
+            temp.className = 'collection-section';
+            temp.style.display = 'block';
+            temp.innerHTML = '<h2>🔍 Results</h2><button onclick="showHome()" style="color:#c9a84c;">← Back</button><div class="product-grid" id="search-results"></div>';
+            document.body.appendChild(temp);
+            const unsplash = await fetchUnsplash(q + ' furniture');
+            await loadData();
+            const sheet = allProducts.filter(p => p.name && p.name.includes(q));
+            renderProducts('search-results', [...sheet, ...unsplash]);
+            window.scrollTo(0,0);
+        }
+        
+        document.addEventListener('keydown', e => {
+            if (document.getElementById('viewer').style.display !== 'block') return;
+            if (e.key === 'Escape') closeViewer();
+            if (e.key === 'ArrowLeft') navViewer(-1);
+            if (e.key === 'ArrowRight') navViewer(1);
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => { renderCats(); showHome(); });
+        
+        window.showHome = showHome;
+        window.showCollection = showCollection;
+        window.searchNow = searchNow;
+        window.openLogin = openLogin;
+        window.adminLogin = adminLogin;
+        window.closeAdmin = closeAdmin;
+        window.previewFiles = previewFiles;
+        window.uploadAll = uploadAll;
+        window.showManage = showManage;
+        window.deleteImg = deleteImg;
+        window.openViewer = openViewer;
+        window.closeViewer = closeViewer;
+        window.navViewer = navViewer;
+        window.startDownload = startDownload;
+        window.finishDownload = finishDownload;
+    </script>
 </body>
 </html>
