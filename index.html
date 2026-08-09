@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
     <!-- ============================================ -->
-    <!-- POPADS - POPUNDER AD -->
+    <!-- POPADS - POPUNDER AD (original) -->
     <!-- ============================================ -->
     <script type="text/javascript" data-cfasync="false">
     /*<![CDATA[/* */
@@ -82,7 +82,7 @@
 </head>
 <body>
 
-    <!-- TOP AD -->
+    <!-- TOP AD - ORIGINAL SCRIPT RESTORED -->
     <div style="background:#000; text-align:center; padding:6px; border-bottom:1px solid #1a1a1a;">
         <p style="color:#555; font-size:0.5rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">Advertisement</p>
         <div style="max-width:350px; margin:0 auto; min-height:60px;">
@@ -109,10 +109,10 @@
         </div>
     </header>
 
-    <!-- LOGIN -->
+    <!-- LOGIN MODAL -->
     <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
     
-    <!-- ADMIN -->
+    <!-- ADMIN PANEL -->
     <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
@@ -138,7 +138,7 @@
         </div>
     </section>
 
-    <!-- AD 1: After Hero -->
+    <!-- AD 1: After Hero - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
 
     <!-- CATEGORIES -->
@@ -147,7 +147,7 @@
         <div id="cats-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;"></div>
     </section>
 
-    <!-- AD 2: After Categories -->
+    <!-- AD 2: After Categories - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685028.effectivecpmnetwork.com/9308a924d252942d682ca93c1aaa8de6/invoke.js"></script></div>
 
     <!-- SEARCH -->
@@ -155,27 +155,27 @@
 
     <!-- BEDS -->
     <div id="bedroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛏️ Bed Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="bedroom-products"></div><button class="load-more-btn" onclick="loadMore('bedroom')">Load More</button></div>
-    <!-- AD 3: After Beds -->
+    <!-- AD 3: After Beds - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685025.effectivecpmnetwork.com/98/b1/9c/98b19cbd65e58054c3a195bde9c05bf4.js"></script></div>
 
     <!-- SOFAS -->
     <div id="livingroom-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🛋️ Couch Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="livingroom-products"></div><button class="load-more-btn" onclick="loadMore('livingroom')">Load More</button></div>
-    <!-- AD 4: After Sofas -->
+    <!-- AD 4: After Sofas - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
 
     <!-- DINING -->
     <div id="dining-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">🍽️ Dining Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="dining-products"></div><button class="load-more-btn" onclick="loadMore('dining')">Load More</button></div>
-    <!-- AD 5: After Dining -->
+    <!-- AD 5: After Dining - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685028.effectivecpmnetwork.com/9308a924d252942d682ca93c1aaa8de6/invoke.js"></script></div>
 
     <!-- TABLES -->
     <div id="tables-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📐 Table Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tables-products"></div><button class="load-more-btn" onclick="loadMore('tables')">Load More</button></div>
-    <!-- AD 6: After Tables -->
+    <!-- AD 6: After Tables - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685025.effectivecpmnetwork.com/98/b1/9c/98b19cbd65e58054c3a195bde9c05bf4.js"></script></div>
 
     <!-- TV STANDS -->
     <div id="tvstands-collection" class="collection-section" style="max-width:1100px;margin:0 auto;padding:15px 12px;"><h2 style="font-family:'Playfair Display',serif;font-size:1.3rem;">📺 TV Stand Designs</h2><button onclick="showHome()" style="color:#c9a84c;background:none;border:none;margin-bottom:10px;">← Back</button><div class="product-grid" id="tvstands-products"></div><button class="load-more-btn" onclick="loadMore('tvstands')">Load More</button></div>
-    <!-- AD 7: After TV Stands -->
+    <!-- AD 7: After TV Stands - ORIGINAL SCRIPT RESTORED -->
     <div class="ad-box"><div class="ad-label">Advertisement</div><script src="https://pl30685027.effectivecpmnetwork.com/71/63/f3/7163f3d9765f5bfd785611596bc85b92.js"></script></div>
 
     <!-- CONTACT -->
