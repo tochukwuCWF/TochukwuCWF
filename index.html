@@ -108,33 +108,28 @@
             60% { transform: translateX(-50%) translateY(8px); opacity: 0.8; }
         }
 
-        /* FLOATING TOOLS - HAMMER, SAW, DRILL */
+        /* FLOATING TOOLS - RAINING LIKE SNOW */
         .floating-tool {
             position: fixed;
             pointer-events: none;
             z-index: 100;
-            width: 45px;
+            width: 35px;
             height: auto;
-            opacity: 0.85;
-            animation: floatTool 12s infinite alternate ease-in-out;
-            filter: drop-shadow(0 0 8px rgba(201,168,76,0.2));
+            opacity: 0.7;
+            animation: rainDown 8s linear infinite;
         }
-        @keyframes floatTool {
-            0% { transform: translate(0px, 0px) rotate(0deg); }
-            25% { transform: translate(60px, -40px) rotate(10deg); }
-            50% { transform: translate(-30px, 60px) rotate(-8deg); }
-            75% { transform: translate(40px, -20px) rotate(5deg); }
-            100% { transform: translate(-50px, 30px) rotate(-5deg); }
+        @keyframes rainDown {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
         }
-        /* Individual delays for variety */
-        .tool-hammer { animation-duration: 14s; top: 15%; left: 5%; }
-        .tool-saw { animation-duration: 16s; top: 25%; right: 3%; }
-        .tool-drill { animation-duration: 18s; bottom: 20%; left: 8%; }
+        .tool-hammer { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+        .tool-saw { left: 50%; animation-duration: 12s; animation-delay: 3s; }
+        .tool-drill { left: 80%; animation-duration: 9s; animation-delay: 6s; }
         @media (max-width: 600px) {
-            .floating-tool { width: 30px; opacity: 0.6; }
-            .tool-hammer { top: 10%; left: 2%; }
-            .tool-saw { top: 15%; right: 2%; }
-            .tool-drill { bottom: 25%; left: 2%; }
+            .floating-tool { width: 25px; opacity: 0.5; }
+            .tool-hammer { left: 5%; }
+            .tool-saw { left: 45%; }
+            .tool-drill { left: 75%; }
         }
     </style>
 </head>
@@ -143,17 +138,10 @@
     <!-- 👇 SCROLL DOWN ARROW - FIXED ON ALL PAGES -->
     <div class="scroll-down-arrow" id="scrollArrow">👇</div>
 
-    <!-- FLOATING TOOLS -->
+    <!-- FLOATING TOOLS - RAINING LIKE SNOW -->
     <img src="https://i.ibb.co/whS8fCx8/hammer-PNG103344.png" class="floating-tool tool-hammer" alt="Hammer">
     <img src="https://i.ibb.co/yn21NXwV/hand-saw-PNG9539.png" class="floating-tool tool-saw" alt="Saw">
     <img src="https://i.ibb.co/Jw8yDcnB/electric-drill-mock-up-on-transparent-background-png.png" class="floating-tool tool-drill" alt="Drill">
-
-    <!-- ENGINEER TOCHUKWU IMAGE ONLY -->
-    <div style="max-width:1100px;margin:10px auto;padding:0 12px;display:flex;align-items:center;justify-content:center;">
-        <div style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid #c9a84c;box-shadow:0 0 30px rgba(201,168,76,0.4);">
-            <img src="https://i.ibb.co/Kj7cTqYP/file-000000003d1482468d3b74de4ce538a3.png" alt="Engineer Tochukwu" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-    </div>
 
     <!-- AD 1: TOP -->
     <div class="ad-box">
@@ -165,10 +153,16 @@
     <!-- HEADER -->
     <header style="background:#080808;border-bottom:1px solid #1a1a1a;position:sticky;top:0;z-index:50;padding:0 10px;">
         <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;flex-wrap:wrap;gap:6px;">
-            <a href="#" onclick="showHome();return false;" style="text-decoration:none;text-align:center;">
-                <div class="logo-border"><span class="logo-main">TCWF</span></div>
-                <div class="logo-subtitle">CLASSIC WORLD FURNITURE</div>
-            </a>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <a href="#" onclick="showHome();return false;" style="text-decoration:none;text-align:center;">
+                    <div class="logo-border"><span class="logo-main">TCWF</span></div>
+                    <div class="logo-subtitle">CLASSIC WORLD FURNITURE</div>
+                </a>
+                <!-- ENGINEER TOCHUKWU PICTURE BESIDE LOGO -->
+                <div style="width:45px;height:45px;border-radius:50%;overflow:hidden;border:2px solid #c9a84c;box-shadow:0 0 15px rgba(201,168,76,0.3);flex-shrink:0;">
+                    <img src="https://i.ibb.co/Kj7cTqYP/file-000000003d1482468d3b74de4ce538a3.png" alt="Engineer Tochukwu" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+            </div>
             <nav style="display:flex;gap:6px;font-size:0.65rem;font-weight:500;flex-wrap:wrap;">
                 <a href="#" onclick="showHome();return false;" style="color:#c9a84c;">Home</a>
                 <a href="#" onclick="showCollection('bedroom');return false;" style="color:#aaa;">Beds</a>
@@ -300,21 +294,26 @@
         function openFullscreen(u, i) {
             fsUrls = u;
             fsIdx = i;
-            document.getElementById('fs-image').src = u[i];
-            document.getElementById('fs-counter').textContent = (i+1) + '/' + u.length;
-            document.getElementById('fullscreen-viewer').classList.add('show');
-            document.body.style.overflow = 'hidden';
+            if(u && u.length > 0 && u[i]) {
+                document.getElementById('fs-image').src = u[i];
+                document.getElementById('fs-counter').textContent = (i+1) + '/' + u.length;
+                document.getElementById('fullscreen-viewer').classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
         }
         function closeFullscreen() {
             document.getElementById('fullscreen-viewer').classList.remove('show');
             document.body.style.overflow = '';
         }
         function fsNav(d) {
-            fsIdx = (fsIdx + d + fsUrls.length) % fsUrls.length;
-            document.getElementById('fs-image').src = fsUrls[fsIdx];
-            document.getElementById('fs-counter').textContent = (fsIdx+1) + '/' + fsUrls.length;
+            if(fsUrls && fsUrls.length > 0) {
+                fsIdx = (fsIdx + d + fsUrls.length) % fsUrls.length;
+                document.getElementById('fs-image').src = fsUrls[fsIdx];
+                document.getElementById('fs-counter').textContent = (fsIdx+1) + '/' + fsUrls.length;
+            }
         }
         async function fsSave() {
+            if(!fsUrls || fsUrls.length === 0) return;
             var u = fsUrls[fsIdx];
             try {
                 var r = await fetch(u);
@@ -326,6 +325,7 @@
             } catch(e) { window.open(u); }
         }
         async function fsDownload() {
+            if(!fsUrls || fsUrls.length === 0) return;
             var u = fsUrls[fsIdx];
             try {
                 var r = await fetch(u);
