@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
-    <!-- GOOGLE ADSENSE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255632222150139" crossorigin="anonymous"></script>
     
-    <!-- POPADS -->
     <script type="text/javascript" data-cfasync="false">
     (function(){var q=window,i="ab1ac711051636ea677165e87cf60e67",o=[["siteId",288+411-92+5315090],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],c=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL2lwdXNoLm1pbi5jc3M=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvZVdwL2xvei5taW4uanM="],l=-1,y,b,t=function(){clearTimeout(b);l++;if(c[l]&&!(1811801901000<(new Date).getTime()&&1<l)){y=q.document.createElement("script");y.type="text/javascript";y.async=!0;var e=q.document.getElementsByTagName("script")[0];y.src="https://"+atob(c[l]);y.crossOrigin="anonymous";y.onerror=t;y.onload=function(){clearTimeout(b);q[i.slice(0,16)+i.slice(0,16)]||t()};b=setTimeout(t,5E3);e.parentNode.insertBefore(y,e)}};if(!q[i]){try{Object.freeze(q[i]=o)}catch(e){}t()}})();
     </script>
@@ -39,11 +37,13 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         body { background:#080808; color:#fff; font-family:'Inter',sans-serif; }
         .logo-main { font-family:'Playfair Display',serif; font-weight:900; font-size:1.8rem; letter-spacing:0.2em; background:linear-gradient(180deg,#f7e08a,#c9a84c,#a88a2e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .logo-border { border:2px solid #c9a84c; box-shadow:0 0 15px rgba(201,168,76,0.3); padding:0.2rem 1rem; border-radius:4px; display:inline-block; }
+        .logo-border { border:2px solid #c9a84c; box-shadow:0 0 15px rgba(201,168,76,0.3); padding:0.2rem 1rem; border-radius:4px; display:inline-block; transition:box-shadow 0.3s; }
         .logo-subtitle { font-size:0.5rem; letter-spacing:0.35em; color:#c9a84c; margin-top:0.3rem; font-weight:700; }
         .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.6rem; }
-        .product-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:8px; overflow:hidden; }
+        .product-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:8px; overflow:hidden; position:relative; }
         .product-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+        .admin-delete-btn { position:absolute; top:4px; right:4px; background:rgba(200,0,0,0.8); color:#fff; border:none; border-radius:50%; width:22px; height:22px; font-size:12px; font-weight:bold; cursor:pointer; z-index:10; display:none; }
+        .product-card:hover .admin-delete-btn { display:block; }
         .category-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:10px; overflow:hidden; position:relative; }
         .category-card img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
         .blink-text { position:absolute; top:8px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 14px; border-radius:20px; font-weight:800; font-size:0.65rem; border:2px solid #c9a84c; animation:blink 1s infinite; white-space:nowrap; pointer-events:none; }
@@ -64,6 +64,7 @@
         #fullscreen-viewer .fs-bottom { position:fixed; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:100000; }
         #fullscreen-viewer .fs-bottom button, #fullscreen-viewer .fs-bottom a { padding:10px 16px; border-radius:25px; font-weight:700; border:none; text-decoration:none; font-size:0.8rem; }
         .fs-save { background:#c9a84c; color:#000; }
+        .fs-download { background:#3b82f6; color:#fff; }
         .fs-wa { background:#25D366; color:#fff; }
         
         .ad-box { text-align:center; margin:12px auto; max-width:350px; padding:6px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:8px; min-height:60px; overflow:hidden; }
@@ -77,6 +78,16 @@
         .btn-green { background:#27ae60; color:#fff; font-weight:600; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; width:100%; }
         .hero-bg { background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920'); background-size:cover; background-position:center; }
         .load-more-btn { display:block; margin:15px auto; padding:10px 25px; background:#c9a84c; color:#000; border:none; border-radius:20px; font-weight:700; cursor:pointer; font-size:0.8rem; }
+        
+        /* Glowing logo animation */
+        .logo-border { animation: glowPulse 3s infinite alternate; }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 8px #c9a84c, 0 0 20px #c9a84c; border-color: #c9a84c; }
+            25% { box-shadow: 0 0 12px #f7e08a, 0 0 30px #f7e08a; border-color: #f7e08a; }
+            50% { box-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b; border-color: #ff6b6b; }
+            75% { box-shadow: 0 0 12px #6bcfff, 0 0 30px #6bcfff; border-color: #6bcfff; }
+            100% { box-shadow: 0 0 8px #c9a84c, 0 0 20px #c9a84c; border-color: #c9a84c; }
+        }
     </style>
 </head>
 <body>
@@ -111,7 +122,7 @@
     <div id="login-modal" class="modal"><div class="modal-content"><h3 style="color:#c9a84c;font-size:1.1rem;margin-bottom:8px;">Admin Login</h3><input type="password" id="admin-pass" placeholder="Password" style="width:100%;padding:10px;background:#000;border:1px solid #333;color:#fff;border-radius:8px;margin-bottom:8px;"><button onclick="adminLogin()" class="btn-gold">Login</button><p id="login-err" style="color:red;font-size:0.75rem;margin-top:6px;display:none;">Wrong!</p></div></div>
     
     <!-- ADMIN -->
-    <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button></div></div>
+    <div id="admin-panel" class="modal"><div class="modal-content"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><h3 style="color:#c9a84c;">Admin</h3><button onclick="document.getElementById('admin-panel').classList.remove('active')" style="color:#fff;font-size:1.3rem;background:none;border:none;">&times;</button></div><button onclick="fixCategories()" class="btn-green" style="margin-bottom:8px;">🔧 Move Beds → Sofas</button><select id="upload-cat" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin-bottom:8px;"><option value="bedroom">🛏️ Bedroom</option><option value="livingroom">🛋️ Living Room</option><option value="dining">🍽️ Dining</option><option value="tables">📐 Tables</option><option value="tvstands">📺 TV Stands</option></select><div onclick="document.getElementById('file-input').click()" style="border:2px dashed #c9a84c;padding:16px;text-align:center;border-radius:8px;cursor:pointer;margin-bottom:8px;"><p style="color:#fff;font-size:0.8rem;">📁 Tap to upload</p><input type="file" id="file-input" multiple accept="image/*" style="display:none;" onchange="previewFiles()"></div><div id="preview-box" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;"></div><button onclick="uploadAll()" class="btn-gold">📤 Upload</button><hr style="border-color:#333;margin:12px 0;"><label style="color:#aaa;font-size:0.8rem;">Set category cover (uploaded image URL)</label><select id="cover-select" style="width:100%;padding:8px;background:#000;border:1px solid #333;color:#fff;border-radius:6px;margin:6px 0;"></select><button onclick="setCategoryCover()" class="btn-gold" style="margin-top:4px;">Set Cover</button></div></div>
 
     <!-- FULL SCREEN VIEWER -->
     <div id="fullscreen-viewer">
@@ -122,6 +133,7 @@
         <img id="fs-image" src="" alt="Furniture">
         <div class="fs-bottom">
             <button class="fs-save" onclick="fsSave()">💾 Save</button>
+            <button class="fs-download" onclick="fsDownload()">⬇️ Download</button>
             <a class="fs-wa" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank">💬 WhatsApp</a>
         </div>
     </div>
@@ -226,6 +238,7 @@
         function closeFullscreen(){document.getElementById('fullscreen-viewer').classList.remove('show');document.body.style.overflow='';}
         function fsNav(d){fsIdx=(fsIdx+d+fsUrls.length)%fsUrls.length;document.getElementById('fs-image').src=fsUrls[fsIdx];document.getElementById('fs-counter').textContent=(fsIdx+1)+'/'+fsUrls.length;}
         async function fsSave(){var u=fsUrls[fsIdx];try{var r=await fetch(u);var b=await r.blob();var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='TCWF-'+Date.now()+'.jpg';a.click();}catch(e){window.open(u);}}
+        async function fsDownload(){var u=fsUrls[fsIdx];try{var r=await fetch(u);var b=await r.blob();var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='TCWF-'+Date.now()+'.jpg';a.click();}catch(e){window.open(u);}}
         document.addEventListener('keydown',function(e){if(!document.getElementById('fullscreen-viewer').classList.contains('show'))return;if(e.key==='Escape')closeFullscreen();if(e.key==='ArrowLeft')fsNav(-1);if(e.key==='ArrowRight')fsNav(1);});
         
         const PL={bedroom:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400',livingroom:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400',dining:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400',tables:'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=400',tvstands:'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400'};
@@ -234,31 +247,35 @@
         const CQ={bedroom:'bed design',livingroom:'couch design',dining:'dining table design',tables:'table design',tvstands:'tv stand design'};
         let ap=[],sf=[],pn={bedroom:1,livingroom:1,dining:1,tables:1,tvstands:1,search:1},cq='';
         
-        async function lS(){try{const r=await fetch(CONFIG.SHEETDB_API);ap=await r.json();ap=ap.map(p=>({...p,category:(p.category||p['category ']||'').trim()}));}catch(e){ap=[];}}
+        async function lS(){try{const r=await fetch(CONFIG.SHEETDB_API);ap=await r.json();ap=ap.map(p=>({...p,category:(p.category||p['category ']||'').trim()}));}catch(e){ap=[];}
+        }
         async function fC(){if(!confirm('Move ALL bedroom images to Living Room?'))return;await lS();const it=ap.filter(p=>p.category==='bedroom');if(!it.length){alert('No images!');return;}let c=0;for(const i of it){try{await fetch(CONFIG.SHEETDB_API+'/id/'+i.id,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:'livingroom'})});c++;}catch(e){}}await lS();alert('✅ Moved '+c+' images!');showCollection('livingroom');}
         async function fU(q,p,n){p=p||1;n=n||20;try{const r=await fetch('https://api.unsplash.com/search/photos?query='+encodeURIComponent(q)+'&per_page='+n+'&page='+p+'&client_id='+CONFIG.UNSPLASH_ACCESS_KEY);const d=await r.json();return d.results.map(function(i){return{id:i.id,url:i.urls.regular,name:i.alt_description||q};});}catch(e){return[];}}
-        function cd(p,i,u){return'<div class="product-card" onclick="openFullscreen('+JSON.stringify(u)+','+i+')"><img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p></div></div>';}
-        async function lM(c){pn[c]++;const b=document.querySelector('#'+c+'-collection .load-more-btn');if(b)b.textContent='Loading...';const im=await fU(CQ[c],pn[c],20);if(im.length){const cn=document.getElementById(c+'-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;if(b)b.textContent='Load More';}}
-        async function lMS(){pn.search++;document.getElementById('search-load-more').textContent='Loading...';const im=await fU(cq,pn.search,20);if(im.length){const cn=document.getElementById('search-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u);}cn.innerHTML+=h;document.getElementById('search-load-more').textContent='Load More';}}
-        async function sN(){const q=document.getElementById('search-input').value.trim();if(!q)return;cq=q+' design furniture';pn.search=1;hA();document.getElementById('search-section').classList.add('active');document.getElementById('search-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Searching...</p>';document.getElementById('search-load-more').style.display='none';const un=await fU(cq,1,30);await lS();const rs=ap.filter(function(p){return p.name&&p.name.toLowerCase().includes(q.toLowerCase());}).concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u);}document.getElementById('search-products').innerHTML=h;if(rs.length>=30)document.getElementById('search-load-more').style.display='block';window.scrollTo(0,0);}
+        function cd(p,i,u,isAdmin){ var delBtn = isAdmin ? '<button class="admin-delete-btn" onclick="event.stopPropagation();deleteImage(\''+p.id+'\',\''+p.category+'\')">✕</button>' : ''; return'<div class="product-card" onclick="openFullscreen('+JSON.stringify(u)+','+i+')">'+delBtn+'<img src="'+p.url+'" loading="lazy"><div style="padding:5px 7px;"><p style="font-size:0.65rem;color:#ccc;">'+(p.name||'Furniture').substring(0,30)+'</p></div></div>';}
+        async function deleteImage(id,cat){if(!confirm('Delete this image?'))return;try{await fetch(CONFIG.SHEETDB_API+'/id/'+id,{method:'DELETE'});await lS();showCollection(cat);}catch(e){alert('Delete failed');}}
+        async function lM(c){pn[c]++;const b=document.querySelector('#'+c+'-collection .load-more-btn');if(b)b.textContent='Loading...';const im=await fU(CQ[c],pn[c],20);if(im.length){const cn=document.getElementById(c+'-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u,false);}cn.innerHTML+=h;if(b)b.textContent='Load More';}}
+        async function lMS(){pn.search++;document.getElementById('search-load-more').textContent='Loading...';const im=await fU(cq,pn.search,20);if(im.length){const cn=document.getElementById('search-products');const e=Array.from(cn.querySelectorAll('img')).map(function(i){return i.src;});const u=e.concat(im.map(function(x){return x.url;}));const s=cn.querySelectorAll('.product-card').length;let h='';for(var i=0;i<im.length;i++){h+=cd(im[i],s+i,u,false);}cn.innerHTML+=h;document.getElementById('search-load-more').textContent='Load More';}}
+        async function sN(){const q=document.getElementById('search-input').value.trim();if(!q)return;cq=q+' design furniture';pn.search=1;hA();document.getElementById('search-section').classList.add('active');document.getElementById('search-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Searching...</p>';document.getElementById('search-load-more').style.display='none';const un=await fU(cq,1,30);await lS();const rs=ap.filter(function(p){return p.name&&p.name.toLowerCase().includes(q.toLowerCase());}).concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u,false);}document.getElementById('search-products').innerHTML=h;if(rs.length>=30)document.getElementById('search-load-more').style.display='block';window.scrollTo(0,0);}
         function hA(){var s=document.querySelectorAll('.collection-section');for(var i=0;i<s.length;i++){s[i].classList.remove('active');}document.getElementById('home-section').style.display='none';document.getElementById('home-cats').style.display='none';}
-        async function sC(c){hA();pn[c]=1;var s=document.getElementById(c+'-collection');if(!s)return;s.classList.add('active');document.getElementById(c+'-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Loading...</p>';await lS();const un=await fU(CQ[c],1,24);const sh=ap.filter(function(p){return p.category===c;});const rs=sh.concat(un);const u=rs.map(function(x){return x.url;});let h='';for(var i=0;i<rs.length;i++){h+=cd(rs[i],i,u);}document.getElementById(c+'-products').innerHTML=h;window.scrollTo(0,0);}
-        function rC(){var h='';for(var i=0;i<CATS.length;i++){var c=CATS[i];h+='<div class="category-card" onclick="sC(\''+c+'\')"><div style="position:relative;"><img src="'+PL[c]+'"><div class="blink-text">✨ VIEW ✨</div></div><div style="padding:8px;text-align:center;"><h3 style="font-family:\'Playfair Display\',serif;font-size:0.85rem;font-weight:600;">'+CL[c]+'</h3></div></div>';}document.getElementById('cats-grid').innerHTML=h;}
+        async function sC(c){hA();pn[c]=1;var s=document.getElementById(c+'-collection');if(!s)return;s.classList.add('active');document.getElementById(c+'-products').innerHTML='<p style="color:#aaa;text-align:center;padding:30px;">Loading...</p>';await lS();const un=await fU(CQ[c],1,24);const sh=ap.filter(function(p){return p.category===c;});const rs=sh.concat(un);const u=rs.map(function(x){return x.url;});let h='';var isAdmin = document.getElementById('admin-panel').classList.contains('active');for(var i=0;i<rs.length;i++){ h+=cd(rs[i],i,u,isAdmin); }document.getElementById(c+'-products').innerHTML=h;window.scrollTo(0,0);}
+        function rC(){var h='';for(var i=0;i<CATS.length;i++){var c=CATS[i]; var cover = localStorage.getItem('cover_'+c) || PL[c]; h+='<div class="category-card" onclick="sC(\''+c+'\')"><div style="position:relative;"><img src="'+cover+'"><div class="blink-text">✨ VIEW ✨</div></div><div style="padding:8px;text-align:center;"><h3 style="font-family:\'Playfair Display\',serif;font-size:0.85rem;font-weight:600;">'+CL[c]+'</h3></div></div>';}document.getElementById('cats-grid').innerHTML=h;}
         function sH(){var s=document.querySelectorAll('.collection-section');for(var i=0;i<s.length;i++){s[i].classList.remove('active');}document.getElementById('home-section').style.display='flex';document.getElementById('home-cats').style.display='block';rC();window.scrollTo(0,0);}
         function pF(){sf=Array.from(document.getElementById('file-input').files);var h='';for(var i=0;i<sf.length;i++){h+='<img src="'+URL.createObjectURL(sf[i])+'" style="width:55px;height:55px;object-fit:cover;border-radius:5px;">';}document.getElementById('preview-box').innerHTML=h;}
-        async function uA(){if(!sf.length){alert('Select images!');return;}const c=document.getElementById('upload-cat').value;for(var i=0;i<sf.length;i++){const fd=new FormData();fd.append('image',sf[i]);try{const r=await fetch('https://api.imgbb.com/1/upload?key='+CONFIG.IMGBB_API_KEY,{method:'POST',body:fd});const d=await r.json();if(d.success){await fetch(CONFIG.SHEETDB_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:String(Date.now()),category:c,url:d.data.url,name:sf[i].name})});}}catch(e){}}await lS();sf=[];document.getElementById('preview-box').innerHTML='';document.getElementById('file-input').value='';alert('✅ Uploaded!');sC(c);}
-        function aL(){if(document.getElementById('admin-pass').value===CONFIG.ADMIN_PASSWORD){document.getElementById('login-modal').classList.remove('active');document.getElementById('admin-panel').classList.add('active');}else{document.getElementById('login-err').style.display='block';}}
+        async function uA(){if(!sf.length){alert('Select images!');return;}const c=document.getElementById('upload-cat').value;for(var i=0;i<sf.length;i++){const fd=new FormData();fd.append('image',sf[i]);try{const r=await fetch('https://api.imgbb.com/1/upload?key='+CONFIG.IMGBB_API_KEY,{method:'POST',body:fd});const d=await r.json();if(d.success){await fetch(CONFIG.SHEETDB_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:String(Date.now())+i, category:c, url:d.data.url, name:sf[i].name})});}}catch(e){}}await lS();sf=[];document.getElementById('preview-box').innerHTML='';document.getElementById('file-input').value='';alert('✅ Uploaded!');sC(c);}
+        function aL(){if(document.getElementById('admin-pass').value===CONFIG.ADMIN_PASSWORD){document.getElementById('login-modal').classList.remove('active');document.getElementById('admin-panel').classList.add('active');populateCoverSelect();}else{document.getElementById('login-err').style.display='block';}}
         function oL(){document.getElementById('login-modal').classList.add('active');document.getElementById('login-err').style.display='none';}
-        
+        function populateCoverSelect(){ var sel=document.getElementById('cover-select'); sel.innerHTML=''; for(var c of CATS){ var opt=document.createElement('option'); opt.value=c; opt.textContent=CL[c]; sel.appendChild(opt); } }
+        function setCategoryCover(){ var cat=document.getElementById('cover-select').value; var url=prompt('Enter image URL for '+CL[cat]+' cover:'); if(url){ localStorage.setItem('cover_'+cat, url); rC(); } }
         document.addEventListener('click',function(e){if(e.target.classList.contains('modal'))e.target.classList.remove('active');});
         document.addEventListener('DOMContentLoaded',function(){rC();sH();});
         
         window.sH=sH;window.sC=sC;window.sN=sN;window.aL=aL;window.oL=oL;window.uA=uA;
         window.pF=pF;window.openFullscreen=openFullscreen;window.closeFullscreen=closeFullscreen;
-        window.fsNav=fsNav;window.fsSave=fsSave;window.lM=lM;window.lMS=lMS;window.fC=fC;
+        window.fsNav=fsNav;window.fsSave=fsSave;window.fsDownload=fsDownload;window.lM=lM;window.lMS=lMS;window.fC=fC;
         window.showHome=sH;window.showCollection=sC;window.searchNow=sN;
         window.adminLogin=aL;window.openLogin=oL;window.uploadAll=uA;
         window.previewFiles=pF;window.loadMore=lM;window.loadMoreSearch=lMS;window.fixCategories=fC;
+        window.deleteImage=deleteImage;window.setCategoryCover=setCategoryCover;
     </script>
 </body>
 </html>
