@@ -42,6 +42,8 @@
         .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.6rem; }
         .product-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:8px; overflow:hidden; position:relative; }
         .product-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+        .admin-delete-btn { position:absolute; top:4px; right:4px; background:rgba(200,0,0,0.8); color:#fff; border:none; border-radius:50%; width:22px; height:22px; font-size:12px; font-weight:bold; cursor:pointer; z-index:10; display:none; }
+        .product-card:hover .admin-delete-btn { display:block; }
         .category-card { cursor:pointer; background:#111; border:1px solid #1a1a1a; border-radius:10px; overflow:hidden; position:relative; }
         .category-card img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
         .blink-text { position:absolute; top:8px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 14px; border-radius:20px; font-weight:800; font-size:0.65rem; border:2px solid #c9a84c; animation:blink 1s infinite; white-space:nowrap; pointer-events:none; }
@@ -165,6 +167,23 @@
         .privacy-content a:hover { text-decoration:underline; }
         .privacy-content ul { list-style-type:disc; padding-left:20px; color:#bbb; }
         .privacy-content p { color:#aaa; line-height:1.6; }
+
+        /* ADS INSIDE FULLSCREEN VIEWER */
+        .fs-ad-container {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 350px;
+            z-index: 99999;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 5px;
+            min-height: 60px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -230,10 +249,18 @@
         <button class="fs-nav fs-prev" onclick="fsNav(-1)">◀</button>
         <button class="fs-nav fs-next" onclick="fsNav(1)">▶</button>
         <img id="fs-image" src="" alt="Furniture">
+        
         <div class="fs-bottom">
             <button class="fs-save" onclick="fsSave()">💾 Save</button>
             <button class="fs-download" onclick="fsDownload()">⬇️ Download</button>
             <a class="fs-wa" href="https://wa.me/2349135357118?text=Hello%20Engineer%20Tochukwu,%20I%20want%20to%20order%20this" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- AD INSIDE FULLSCREEN VIEWER (SHOWS WHEN POPUP OPENS) -->
+        <div class="fs-ad-container">
+            <div class="ad-label" style="color:#555;font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Advertisement</div>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9255632222150139" data-ad-slot="7261907297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
     </div>
 
@@ -436,6 +463,13 @@
             document.body.style.overflow = 'hidden';
             fsUrls = [url];
             fsIdx = 0;
+
+            // PUSH ADSENSE AD WHEN POPUP OPENS
+            setTimeout(function(){
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch(e) {}
+            }, 500);
         }
         
         function closeFullscreen() {
